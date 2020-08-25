@@ -1,4 +1,8 @@
 //- Based on https://getbootstrap.com/docs/4.5/getting-started/introduction/
+//- Define some variables for oursevles
+- const reviewCount = 50;
+
+//- Start our page
 doctype html
 html(lang="en")
   head
@@ -16,7 +20,7 @@ html(lang="en")
     title Programming mentor - Todd Wolfson
   body
     .container
-      .row
+      .row.pt-3
         .col-12
           h1 Programming mentor
           h2 Todd Wolfson
@@ -37,7 +41,7 @@ html(lang="en")
                   | Senior Software Engineer
                   br
                   | 5.0 &#11088; (
-                  a(href="#reviews") 50 reviews
+                  a(href="#reviews") #{reviewCount} reviews
                   | )
                 //- TODO: Verify review link is good
               p
@@ -57,42 +61,63 @@ html(lang="en")
             .card-body
               p.lead Work with a former Uber and startup software engineer as your mentor
 
-              h5 Skills
-              p
-                - let skills = [];
-                - skills.push("JavaScript (9 years)");
-                - skills.push("Node.js (7 years)");
-                - skills.push("Python (6 years)");
-                - skills.push("Ruby (4 years)");
-                - skills.push("HTML/CSS (14 years)");
-                - skills.push("SQL (9 years)");
-                - skills.push("Ruby on Rails (2 years)");
-                - skills.push("bash");
-                - skills.push("git");
-                - skills.push("OAuth2");
-                - skills.push("MVC");
-                - skills.push("ORM");
-                - skills.push("AWS Lambda");
-                for skill, i in skills
-                  span.badge.badge-secondary= skill
-                  if i != (skills.length - 1)
-                    = " "
+              #skills
+                h5 Skills
+                p
+                  - let skills = [];
+                  - skills.push("JavaScript (9 years)");
+                  - skills.push("Node.js (7 years)");
+                  - skills.push("Python (6 years)");
+                  - skills.push("Ruby (4 years)");
+                  - skills.push("HTML/CSS (14 years)");
+                  - skills.push("SQL (9 years)");
+                  - skills.push("Ruby on Rails (2 years)");
+                  - skills.push("bash");
+                  - skills.push("git");
+                  - skills.push("OAuth2");
+                  //- - skills.push("MVC");
+                  //- - skills.push("ORM");
+                  - skills.push("AWS Lambda");
+                  for skill, i in skills
+                    span.badge.badge-secondary= skill
+                    if i != (skills.length - 1)
+                      = " "
 
-              h5 How does it work?
-              ul
-                li
-                  = "Contact me "
-                  a(href="#contact") via the form below
-                li I'll reply within 24 hours (usually 1-2 hours)
-                li We talk and verify that I am suitable to mentor you
-                li We schedule a time and use Zoom to screenshare through your problems
-              h5 Reviews
-              //- TODO: Make this a grid of 3
-              .card
-                .card-body
-                  | What an awesome guy! Picked up on a rather large (and difficult) assignment very quickly, making it look so easy and explained things extremely well. I wish I could carry this guy around in my back pocket. Friggin talented dude!
-                  | - Tommy McCafferty, July 2020
-
+              #how-does-it-work
+                h5 How does it work?
+                ul
+                  li
+                    = "Contact me "
+                    a(href="#contact") via the form below
+                  li I'll reply within 24 hours (usually 1-2 hours)
+                  li We talk and verify that I am suitable to mentor you
+                  li We schedule a time and use Zoom to screenshare through your problems
+              #reviews
+                h5
+                  ="Reviews, "
+                  span(aria-label="5 stars") 5.0 &#11088;
+                  =" (50 reviews)"
+                //- TODO: Make this a grid of 3
+                - let reviews = [];
+                - reviews.push({content: 'Amazing tutor with lots of insight on different systems front and back end.', signature: 'Jammie T., July 2020'});
+                - reviews.push({content: 'Total cool dude knew his stuff and was able to explain things to me the way I needed things explained!', signature: 'Erik A., July 2020'});
+                - reviews.push({content: 'Todd was very helpful in walking me though a structured process for getting around a coding block I was facing. Thanks!', signature: 'Anthony L., July 2020'});
+                - reviews.push({content: 'I totally recommend Todd. He has impressive programming skills and the ability to explain, which is a rare combination.', signature: 'Marcela X., August 2020'});
+                - reviews.push({content: 'Clear thinker and knowledgeable across a range of topics and was very good at explaining concepts.', signature: 'Sam F., July 2020'});
+                .row
+                  for review in reviews
+                    .col-4
+                      .card.mb-3
+                        .card-body
+                          p.mb-2.text-center(aria-label="5 stars") &#11088;&#11088;&#11088;&#11088;&#11088;
+                          p.mb-2= review.content
+                          p.mb-0
+                            i= "- " + review.signature
+                  .col-4
+                    .card.mb-3
+                      .card-body
+                        = `View the other ${reviewCount} reviews `
+                        a(href="https://www.codementor.io/@twolfson") here
 
 
     //- Optional JS for Bootstrap, omitted for now
