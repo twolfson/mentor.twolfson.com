@@ -6,8 +6,10 @@ Task list:
   - Install, development, deployment, release, LiveReload
 - Deploy to server. Could do S3 but feel like NGINX + LetsEncrypt might be faster due to S3 headaches
 - Build the damn site
+  - Favicon
 - Add in analytics
 - Add in Sentry for any dynamic JS?
+- See all TODOs
 
 ## Commands to document
 - Install dependencies

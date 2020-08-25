@@ -12,11 +12,32 @@ html(lang="en")
     title Programming mentor - Todd Wolfson
   body
     .container
-      .row.bg-dark.text-white
+      .row.bg-dark.text-white.mb-3
         .col-12
           .jumbotron.jumbotron-fluid.bg-dark.text-white
-            h1 Programming mentor - Todd Wolfson
+            h1 Programming mentor
+            h2 Todd Wolfson
       .row
+        .col-3
+          .card
+            - let imgSize = 400;
+            img.card-img-top(src=`https://s.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d?s=${encodeURIComponent(imgSize)}`)
+            .card-body
+              p
+                | Todd Wolfson
+                br
+                | Senior Software Engineer
+                br
+                | 5.0 &#11088; (
+                a(href="#reviews") 50 reviews
+                | )
+                //- TODO: Verify review link is good
+              p
+                | $120 / hour
+                br
+                | $10 / 5 minutes
+              p
+                a.btn.btn-primary.btn-block(href="#contact") Contact
 
     //- Optional JS for Bootstrap, omitted for now
     //- script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
