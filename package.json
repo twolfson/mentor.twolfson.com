@@ -5,11 +5,12 @@
   "main": null,
   "dependencies": {},
   "devDependencies": {
-    "parcel": "~1.12.4"
+    "parcel": "~1.12.4",
+    "pug": "~3.0.0"
   },
   "scripts": {
     "start": "parcel server/index.pug",
-    "build": "NODE_ENV=production parcel build server/index.pug",
+    "build": "rm -r dist && NODE_ENV=production parcel build server/index.pug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Todd Wolfson <todd@twolfson.com> (http://twolfson.com/)",
