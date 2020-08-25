@@ -1,0 +1,16 @@
+{
+  "name": "mentor.twolfson.com",
+  "version": "1.0.0",
+  "description": "Website for twolfson's mentoring service",
+  "main": null,
+  "dependencies": {},
+  "devDependencies": {
+    "parcel": "~1.12.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Todd Wolfson <todd@twolfson.com> (http://twolfson.com/)",
+  "license": "Unlicense",
+  "private": true
+}
