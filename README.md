@@ -13,6 +13,10 @@ Task list:
 - Add in Sentry for any dynamic JS?
 - See all TODOs
 - Check for all working links
+- GitHub links? LinkedIn links? GitHub projects?
+  - Employment? Nah
+- Link to review sources
+- Payments accepted at the bottom
 
 ## Commands to document
 - Install dependencies
