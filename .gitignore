@@ -1,1 +1,6 @@
+# Node.js dependencies
 node_modules/
+
+# Parcel.js files
+.cache/
+dist/

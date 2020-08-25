@@ -8,8 +8,8 @@
     "parcel": "~1.12.4"
   },
   "scripts": {
-    "start": "parcel index.html",
-    "build": "NODE_ENV=production parcel build index.html",
+    "start": "parcel server/index.pug",
+    "build": "NODE_ENV=production parcel build server/index.pug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Todd Wolfson <todd@twolfson.com> (http://twolfson.com/)",
