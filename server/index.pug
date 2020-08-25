@@ -23,17 +23,21 @@ html(lang="en")
           hr.hr--header
       .row
         .col-12.col-lg-3
-          .card
+          //- mb-3 spacing for cards next to cards on mobile view
+          .card.mb-3
             - const getGravatarUrl = (imgSize) => `https://s.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d?s=${encodeURIComponent(imgSize)}`;
             - const avatarText = "Photo of Todd Wolfson";
             img.d-none.d-lg-block.card-img-top(src=getGravatarUrl(400) alt=avatarText)
             .card-body
               .media
                 img.d-lg-none.mr-3(src=getGravatarUrl(64) alt=avatarText)
-                .media-body
+                p.media-body
                   | Todd Wolfson
                   br
-                  | Senior Software Engineer
+                  //- Could use abbreviation but distracts from purpose of page
+                  //- abbr.d-none.d-lg-inline.d-xl-none(title="Senior") Sr
+                  span.d-inline.d-lg-none.d-xl-inline Senior
+                  = " Software Engineer"
                   br
                   | 5.0 &#11088; (
                   a(href="#reviews") 50 reviews
@@ -50,7 +54,7 @@ html(lang="en")
               p
                 a.btn.btn-primary.btn-block(href="#contact") Contact
                 a.btn.btn-secondary.btn-block(href="https://www.timeanddate.com/worldclock/converter.html?p1=224") Compare timezone
-        .col-9.col-xs-12
+        .col-12.col-lg-9
           .card
             .card-body
               | foo
