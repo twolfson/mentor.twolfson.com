@@ -59,31 +59,24 @@ html(lang="en")
 
               h5 Skills
               p
-                span.badge.badge-secondary JavaScript (9 years)
-                = " "
-                span.badge.badge-secondary Node.js (7 years)
-                = " "
-                span.badge.badge-secondary Python (6 years)
-                = " "
-                span.badge.badge-secondary Ruby (4 years)
-                = " "
-                span.badge.badge-secondary HTML/CSS (14 years)
-                = " "
-                span.badge.badge-secondary SQL (9 years)
-                = " "
-                span.badge.badge-secondary Ruby on Rails (2 years)
-                = " "
-                span.badge.badge-secondary bash
-                = " "
-                span.badge.badge-secondary git
-                = " "
-                span.badge.badge-secondary OAuth2
-                = " "
-                span.badge.badge-secondary MVC
-                = " "
-                span.badge.badge-secondary ORM
-                = " "
-                span.badge.badge-secondary AWS Lambda
+                - let skills = [];
+                - skills.push("JavaScript (9 years)");
+                - skills.push("Node.js (7 years)");
+                - skills.push("Python (6 years)");
+                - skills.push("Ruby (4 years)");
+                - skills.push("HTML/CSS (14 years)");
+                - skills.push("SQL (9 years)");
+                - skills.push("Ruby on Rails (2 years)");
+                - skills.push("bash");
+                - skills.push("git");
+                - skills.push("OAuth2");
+                - skills.push("MVC");
+                - skills.push("ORM");
+                - skills.push("AWS Lambda");
+                for skill, i in skills
+                  span.badge.badge-secondary= skill
+                  if i != (skills.length - 1)
+                    = " "
 
               h5 How does it work?
               ul
