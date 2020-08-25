@@ -22,19 +22,22 @@ html(lang="en")
           h2 Todd Wolfson
           hr.hr--header
       .row
-        .col-3
+        .col-12.col-lg-3
           .card
-            - let imgSize = 400;
-            img.card-img-top(src=`https://s.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d?s=${encodeURIComponent(imgSize)}`)
+            - const getGravatarUrl = (imgSize) => `https://s.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d?s=${encodeURIComponent(imgSize)}`;
+            - const avatarText = "Photo of Todd Wolfson";
+            img.d-none.d-lg-block.card-img-top(src=getGravatarUrl(400) alt=avatarText)
             .card-body
-              p
-                | Todd Wolfson
-                br
-                | Senior Software Engineer
-                br
-                | 5.0 &#11088; (
-                a(href="#reviews") 50 reviews
-                | )
+              .media
+                img.d-lg-none.mr-3(src=getGravatarUrl(64) alt=avatarText)
+                .media-body
+                  | Todd Wolfson
+                  br
+                  | Senior Software Engineer
+                  br
+                  | 5.0 &#11088; (
+                  a(href="#reviews") 50 reviews
+                  | )
                 //- TODO: Verify review link is good
               p
                 | $120 / hour
@@ -47,6 +50,11 @@ html(lang="en")
               p
                 a.btn.btn-primary.btn-block(href="#contact") Contact
                 a.btn.btn-secondary.btn-block(href="https://www.timeanddate.com/worldclock/converter.html?p1=224") Compare timezone
+        .col-9.col-xs-12
+          .card
+            .card-body
+              | foo
+
 
     //- Optional JS for Bootstrap, omitted for now
     //- script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
