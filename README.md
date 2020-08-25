@@ -1,6 +1,11 @@
 # mentor.twolfson.com
 Website for twolfson's mentoring service
 
+Task list:
+- Update README
+- Deploy to server. Could do S3 but feel like NGINX + LetsEncrypt might be faster due to S3 headaches
+- Build the damn site
+
 ## Commands to document
 - Install dependencies
   ```bash

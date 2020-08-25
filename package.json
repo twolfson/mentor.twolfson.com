@@ -9,7 +9,7 @@
     "pug": "~3.0.0"
   },
   "scripts": {
-    "start": "parcel server/index.pug",
+    "start": "parcel server/index.pug --port 5000",
     "build": "rm -r dist && NODE_ENV=production parcel build server/index.pug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
