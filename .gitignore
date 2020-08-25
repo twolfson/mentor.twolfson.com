@@ -1,0 +1,9 @@
+# Ruby/Bundler dependencies
+bin
+vendor
+
+# Jekyll/development files
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
