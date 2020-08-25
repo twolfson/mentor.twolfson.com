@@ -7,6 +7,8 @@ Task list:
 - Deploy to server. Could do S3 but feel like NGINX + LetsEncrypt might be faster due to S3 headaches
 - Build the damn site
   - Favicon
+  - Meta keywords and such? SEO?
+  - Lighthouse/a11y check?
 - Add in analytics
 - Add in Sentry for any dynamic JS?
 - See all TODOs
