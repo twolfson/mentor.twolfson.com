@@ -40,7 +40,8 @@ html(lang="en")
                   br
                   | Senior Software Engineer
                   br
-                  | 5.0 &#11088; (
+                  span(aria-label="5 star") 5.0 &#11088;
+                  = " ("
                   a(href="#reviews") #{reviewCount} reviews
                   | )
                 //- TODO: Verify review link is good
@@ -95,7 +96,7 @@ html(lang="en")
               #reviews
                 h5
                   ="Reviews, "
-                  span(aria-label="5 stars") 5.0 &#11088;
+                  span(aria-label="5 star") 5.0 &#11088;
                   =" (50 reviews)"
                 //- TODO: Make this a grid of 3
                 - let reviews = [];
@@ -109,7 +110,7 @@ html(lang="en")
                     .col-4
                       .card.mb-3
                         .card-body
-                          p.mb-2.text-center(aria-label="5 stars") &#11088;&#11088;&#11088;&#11088;&#11088;
+                          p.mb-2.text-center(aria-label="5 star") &#11088;&#11088;&#11088;&#11088;&#11088;
                           p.mb-2= review.content
                           p.mb-0
                             i= "- " + review.signature
