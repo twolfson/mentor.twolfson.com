@@ -12,6 +12,7 @@ Task list:
 - Add in analytics
 - Add in Sentry for any dynamic JS?
 - See all TODOs
+- Check for all working links
 
 ## Commands to document
 - Install dependencies
