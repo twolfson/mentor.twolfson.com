@@ -1,6 +1,7 @@
-// Define common variables from Bootstrap
+// Define common variables
 $bs-secondary-color: #6c757d;
 $bs-text-color: #212529;
+$xxs-breakpoint: 479px; // Based on: https://github.com/auipga/bootstrap-xxs
 
 // Define our rules
 // SECTION: Bootstrap-like rules
@@ -13,6 +14,19 @@ $bs-text-color: #212529;
 .badge--text-normal {
   font-size: initial;
   font-weight: initial;
+}
+
+@media (max-width: $xxs-breakpoint) {
+  // https://github.com/twbs/bootstrap/blob/v4.5.2/dist/css/bootstrap-grid.css#L428-L432
+  .col-xxs-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  // https://github.com/twbs/bootstrap/blob/v4.5.2/dist/css/bootstrap-grid.css#L1175-L1178
+  .d-xxs-none {
+    display: none !important;
+  }
 }
 
 // SECTION: Page specific content

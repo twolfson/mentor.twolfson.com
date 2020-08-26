@@ -163,7 +163,7 @@ html(lang="en")
                 //- - reviews.push({content: 'Clear thinker and knowledgeable across a range of topics and was very good at explaining concepts.', signature: 'Sam F., July 2020'});
                 .row
                   for review, i in reviews
-                    .col-12.col-md-6.col-xl-4(class=(i === reviews.length -1 ? 'd-none d-md-block d-xl-none' : ''))
+                    .col-xxs-12.col-6.col-xl-4(class=(i === reviews.length -1 ? 'd-xxs-none d-xl-none' : ''))
                       .card.mb-3
                         .card-body
                           p.mb-2.text-center(aria-label="5 star") &#11088;&#11088;&#11088;&#11088;&#11088;
