@@ -10,8 +10,8 @@
     "sass": "~1.26.10"
   },
   "scripts": {
-    "start": "parcel server/index.pug --port 5000",
-    "build": "rm -r dist && NODE_ENV=production parcel build server/index.pug",
+    "start": "parcel server/index.pug server/robots.txt --port 5000",
+    "build": "rm -r dist && NODE_ENV=production parcel build server/index.pug server/robots.txt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Todd Wolfson <todd@twolfson.com> (http://twolfson.com/)",
