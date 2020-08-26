@@ -64,7 +64,7 @@ html(lang="en")
 
               #skills
                 h5 Skills
-                p
+                p.mb-2
                   - let skills = [];
                   - skills.push("JavaScript (9 years)");
                   - skills.push("Node.js (7 years)");
@@ -76,11 +76,12 @@ html(lang="en")
                   - skills.push("bash");
                   - skills.push("git");
                   - skills.push("OAuth2");
+                  - skills.push("DevOps");
                   //- - skills.push("MVC");
                   //- - skills.push("ORM");
                   - skills.push("AWS Lambda");
                   for skill, i in skills
-                    span.badge.badge-secondary= skill
+                    span.badge.badge-secondary.badge--text-normal.mb-1= skill
                     if i != (skills.length - 1)
                       = " "
 
