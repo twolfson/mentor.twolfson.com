@@ -60,10 +60,11 @@ html(lang="en")
         .col-12.col-lg-8.col-xl-9
           .card
             .card-body
-              p.lead Work with a former Uber and startup software engineer as your mentor
+              .profile-section
+                h3.h4 Work with a former Uber and startup software engineer as your mentor
 
-              #skills
-                h5 Skills
+              .profile-section
+                h3#skills Skills
                 p.mb-2
                   - let skills = [];
                   - skills.push("JavaScript (9 years)");
@@ -93,8 +94,9 @@ html(lang="en")
                   a.btn.btn-sm.btn-outline-info(href="https://github.com/twolfson") GitHub link
                   = " "
                   a.btn.btn-sm.btn-outline-info(href="https://www.linkedin.com/in/toddwolfson/") LinkedIn link
-              #how-do-we-get-started
-                h5 How do we get started?
+
+              .profile-section
+                h3#how-do-we-get-started How do we get started?
                 ul
                   li
                     = "Contact me "
@@ -104,8 +106,8 @@ html(lang="en")
                   li We talk and verify that I am suitable to mentor you
                   li We schedule a time and use Zoom to screenshare through your problems
                   li We can do a one-shot version or a long-term collaboration
-              #reviews
-                h5
+              .profile-section
+                h3#reviews
                   ="Reviews, "
                   span(aria-label="5 star") 5.0 &#11088;
                   =" (50 reviews)"
@@ -127,12 +129,12 @@ html(lang="en")
                             i= "- " + review.signature
                 .row
                   .col-12
-                    .card.mb-3
+                    .card
                       .card-body.text-center
                         = `View all ${reviewCount} reviews `
                         a(href="https://www.codementor.io/@twolfson") here
-              #contact
-                h5 Contact
+              .profile-section
+                h3#contact Contact
                 .row
                   .col-12.col-md-7
                     //- https://www.jotform.com/build/202376968124057/publish/embed
@@ -159,44 +161,44 @@ html(lang="en")
                         input#meeting_time.form-control(name=inputName, type="text", required, placeholder="(e.g. Tuesday at 2PM PST would be great!)")
                       p
                         button.btn.btn-primary(type="submit") Submit
-                      p
+                      p.mb-0
                         i.text-muted
                           = "Powered by "
                           a(href="https://www.jotform.com/") JotForm
                       input(type="hidden", id="simple_spc", name="simple_spc" value="202376968124057")
                       script(type="text/javascript").
                         document.getElementById("si" + "mple" + "_spc").value = "202376968124057-202376968124057";
-                #questions
-                  h5 Still have questions?
-                  p Let's try to answer them below
-                  .row.question: .col-12.col-md-8
-                    strong Is mentoring really for me?
-                    p
-                      | If you're reading this site, then probably yes.
-                    p
-                      | I work with Bootcamp students, Computer Science (CS) majors, freelancers, full-time professionals, and hobbyists.
-                    p
-                      | The common thread: They all want to learn and improve their skills.
-                  .row.question: .col-12.col-md-8
-                    strong Your rate is kind of expensive, do you offer student discounts?
-                    p Sadly, I don't. You're getting what you pay for, a first-class experience from a veteran professional.
-                    p I'm glad to talk if you need more reassurance though =)
-                  .row.question: .col-12.col-md-8
-                    strong What payments do you accept?
-                    p
-                      a(href="https://www.paypal.com/") PayPal
-                      =", "
-                      a(href="https://venmo.com/") Venmo
-                      =", "
-                      a(href="https://transferwise.com/") TransferWise
-                      =", "
-                      a(href="https://www.coinbase.com/") Cryptocurrency
-                      =", really anything as long as we are both okay with it."
-                  .row.question: .col-12.col-md-8
-                    strong My question isn't on here
-                    p.mb-0
-                      = "Feel free to send me an email at "
-                      a(href="mailto:todd@twolfson.com?subject=Programming mentor question") todd@twolfson.com
+              .profile-section.mb-0
+                h3#questions Still have questions?
+                p Let's try to answer them below
+                .row.question: .col-12.col-md-8
+                  strong Is mentoring really for me?
+                  p
+                    | If you're reading this site, then probably yes.
+                  p
+                    | I work with Bootcamp students, Computer Science (CS) majors, freelancers, full-time professionals, and hobbyists.
+                  p
+                    | The common thread: They all want to learn and improve their skills.
+                .row.question: .col-12.col-md-8
+                  strong Your rate is kind of expensive, do you offer student discounts?
+                  p Sadly, I don't. You're getting what you pay for, a first-class experience from a veteran professional.
+                  p I'm glad to talk if you need more reassurance though =)
+                .row.question: .col-12.col-md-8
+                  strong What payments do you accept?
+                  p
+                    a(href="https://www.paypal.com/") PayPal
+                    =", "
+                    a(href="https://venmo.com/") Venmo
+                    =", "
+                    a(href="https://transferwise.com/") TransferWise
+                    =", "
+                    a(href="https://www.coinbase.com/") Cryptocurrency
+                    =", really anything as long as we are both okay with it."
+                .row.question: .col-12.col-md-8
+                  strong My question isn't on here
+                  p.mb-0
+                    = "Feel free to send me an email at "
+                    a(href="mailto:todd@twolfson.com?subject=Programming mentor question") todd@twolfson.com
       .row
         .col-12.text-center
           hr.hr--footer
