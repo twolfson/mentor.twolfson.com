@@ -1,12 +1,22 @@
 //- Based on https://getbootstrap.com/docs/4.5/getting-started/introduction/
-//- Define some variables/helpers for oursevles
+//- Define some variables/helpers for ourselves
 - const reviewCount = 50;
 - const getGravatarUrl = (imgSize) => `https://s.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d?s=${encodeURIComponent(imgSize)}`;
+- const showAnalytics = process.env.NODE_ENV === 'production';
 
 //- Start our page
 doctype html
 html(lang="en")
   head
+    //- Google Tag Manager: "Paste this code as high in the <head> of the page as possible"
+    if showAnalytics
+      script.
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-M4ZRN6Z');
+
     //- Required meta tags
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
@@ -64,6 +74,12 @@ html(lang="en")
 
     //- No Sentry for site as there's nothing to break...
   body
+    //- Google Tag Manager: "Paste this code immediately after the opening <body> tag"
+    //- Omitting `noscript`, respect no analytics for those who don't want it
+    //- if showAnalytics
+      //- noscript: iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-M4ZRN6Z", height="0", width="0", style="display:none;visibility:hidden")
+
+    //- Start on page content
     .container
       .row.pt-3
         .col-12
