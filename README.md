@@ -27,7 +27,8 @@ We provide the following scripts/commands:
   - Files will automatically be updated via Parcel.js' hot module replacement
   - This sometimes requires rebooting on file addition/deletion but is a slick alternative to LiveReload
 - `npm run build`, builds files for production
-- `./release.sh <version>`, creates a new `git tag` version via `foundry`
+- `foundry release <version>`, creates a new `git tag` version and updates `package.json` via `foundry`
+  - Requires `foundry.cli` is installed
 - `./deploy.sh <ssh-server>`, builds and deploys static files to an SSH server
 
 ## Unlicense
