@@ -125,18 +125,35 @@ html(lang="en")
                 h5 Contact
                 .row
                   .col-10.col-md-7
-                    form(method="POST")
+                    //- https://www.jotform.com/build/202376968124057/publish/embed
+                    //- Initially written as a Bootstrap form them updated with "Source Code" embed content
+                    form(action="https://submit.jotform.com/submit/202376968124057/", method="post", name="form_202376968124057", id="202376968124057", accept-charset="utf-8", autocomplete="on")
+                      <input type="hidden" name="formID" value="202376968124057" />
+                      <input type="hidden" id="JWTContainer" value="" />
+                      <input type="hidden" id="cardinalOrderNumber" value="" />
+                      //- Define pass-through variables for form elements
+                      - let inputId;
                       .form-group
-                        label(for="email") Email address *
-                        input#email.form-control(type="email", required, placeholder="hello@world.com")
+                        //- - inputId = 'email';
+                        - inputId = 'input_3';
+                        label(for=inputId) Email address *
+                        input.form-control(id=inputId, type="email", required, placeholder="hello@world.com")
                       .form-group
-                        label(for="goals") Briefly describe what you'd like mentoring on *
+                        //- - inputId = 'goals';
+                        - inputId = 'input_4';
+                        label(for=inputId) Briefly describe what you'd like mentoring on *
                         - oalsplace
-                        textarea#goals.form-control(required, placeholder="(e.g. Looking to learn about data structures, want to improve full-stack knowledge)")
+                        textarea.form-control(id=inputId, required, placeholder="(e.g. Looking to learn about data structures, want to improve full-stack knowledge)")
                       .form-group
-                        label(for="meeting_time") When would your ideal first session be? *
-                        input#meeting_time.form-control(type="text", required, placeholder="(e.g. Tuesday at 2PM PST would be great!)")
+                        //- - inputId = 'meeting_time';
+                        - inputId = 'input_5';
+                        label(for=inputId) When would your ideal first session be? *
+                        input.form-control(id=inputId, type="text", required, placeholder="(e.g. Tuesday at 2PM PST would be great!)")
                       button.btn.btn-primary(type="submit") Submit
+                      input(type="hidden", id="simple_spc", name="simple_spc" value="202376968124057")
+                      script(type="text/javascript").
+                        document.getElementById("si" + "mple" + "_spc").value = "202376968124057-202376968124057";
+
     //- Optional JS for Bootstrap, omitted for now
     //- script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
     //- script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js", integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN", crossorigin="anonymous")
