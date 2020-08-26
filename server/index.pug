@@ -1,6 +1,7 @@
 //- Based on https://getbootstrap.com/docs/4.5/getting-started/introduction/
-//- Define some variables for oursevles
+//- Define some variables/helpers for oursevles
 - const reviewCount = 50;
+- const getGravatarUrl = (imgSize) => `https://s.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d?s=${encodeURIComponent(imgSize)}`;
 
 //- Start our page
 doctype html
@@ -21,13 +22,29 @@ html(lang="en")
     //- Bootstrap CSS
     link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z", crossorigin="anonymous")
 
+
     //- SEO
     //- https://www.searchenginewatch.com/2018/04/04/a-quick-and-easy-guide-to-meta-tags-in-seo/
     //- https://moz.com/blog/the-ultimate-guide-to-seo-meta-tags
     //- https://ahrefs.com/blog/seo-meta-tags/#meta-refresh-redirect
-    meta(name="description", content="Hire a former Uber and startup software engineer as your programming mentor")
+    - let pageTitle = 'Programming mentor - Todd Wolfson';
+    - let pageDescription = 'Hire a former Uber and startup software engineer as your programming mentor';
+    //- DEV: Technically `title` is UX but good to consolidate here
+    title= pageTitle
+    meta(name="description", content=pageDescription)
     meta(name="robots", content="index, follow")
     //- Omitting keywords as per recommendations, feels weird
+    //- SEO, Twitter: https://moz.com/blog/meta-data-templates-123
+    //-   DEV: Without this, we get no link at all
+    //-   https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup
+    meta(name="twitter:card", content="summary")
+    meta(name="twitter:site", content="@twolfsn")
+    meta(name="twitter:title", content=pageTitle)
+    meta(name="twitter:description", content=pageDescription)
+    meta(name="twitter:creator", content="@twolfsn")
+    //- Twitter Summary card images must be at least 120x120px
+    meta(name="twitter:image", content=getGravatarUrl(120))
+    meta(name="twitter:image:alt", content="Photo of Todd Wolfson")
 
     //- Custom CSS
     link(rel="stylesheet", href="../browser/css/main.scss")
@@ -35,7 +52,6 @@ html(lang="en")
     //- No Sentry for site as there's nothing to break...
 
     //- More page content
-    title Programming mentor - Todd Wolfson
   body
     .container
       .row.pt-3
@@ -47,7 +63,6 @@ html(lang="en")
         .col-12.col-lg-4.col-xl-3
           //- mb-3 spacing for cards next to cards on mobile view
           .card.mb-3
-            - const getGravatarUrl = (imgSize) => `https://s.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d?s=${encodeURIComponent(imgSize)}`;
             - const avatarText = "Photo of Todd Wolfson";
             img.d-none.d-lg-block.card-img-top(src=getGravatarUrl(400) alt=avatarText)
             .card-body
