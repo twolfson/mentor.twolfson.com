@@ -1,9 +1,20 @@
+// Define common variables from Bootstrap
+$bs-secondary-color: #6c757d;
+$bs-text-color: #212529;
+
+// Define our rules
 .hr--header {
-  border-top: 3px solid black;
+  border-top: 3px solid $bs-text-color;
 }
 
 .hr--footer {
   border-top: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+.badge-outline-text {
+  // Based on `btn-outline-secondary`
+  border: 1px solid $bs-text-color;
+  color: $bs-text-color;
 }
 
 .badge--text-normal {
