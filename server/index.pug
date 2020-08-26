@@ -123,8 +123,20 @@ html(lang="en")
                         a(href="https://www.codementor.io/@twolfson") here
               #contact
                 h5 Contact
-                include views/includes/_contact-form.pug
-
+                .row
+                  .col-10.col-md-7
+                    form(method="POST")
+                      .form-group
+                        label(for="email") Email address *
+                        input#email.form-control(type="email", required, placeholder="hello@world.com")
+                      .form-group
+                        label(for="goals") Briefly describe what you'd like mentoring on *
+                        - oalsplace
+                        textarea#goals.form-control(required, placeholder="(e.g. Looking to learn about data structures, want to improve full-stack knowledge)")
+                      .form-group
+                        label(for="meeting_time") When would your ideal first session be? *
+                        input#meeting_time.form-control(type="text", required, placeholder="(e.g. Tuesday at 2PM PST would be great!)")
+                      button.btn.btn-primary(type="submit") Submit
     //- Optional JS for Bootstrap, omitted for now
     //- script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
     //- script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js", integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN", crossorigin="anonymous")
