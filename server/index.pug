@@ -84,9 +84,17 @@ html(lang="en")
                     span.badge.badge-secondary.badge--text-normal.mb-1= skill
                     if i != (skills.length - 1)
                       = " "
-
-              #how-does-it-work
-                h5 How does it work?
+                p
+                  = "Authored over "
+                  a(href="https://github.com/twolfson?tab=repositories&type=source") 130 repos/packages
+                  = " with over "
+                  a(href="https://twolfson.com/projects") 1200 stars
+                p
+                  a.btn.btn-sm.btn-outline-info(href="https://github.com/twolfson") GitHub link
+                  = " "
+                  a.btn.btn-sm.btn-outline-info(href="https://www.linkedin.com/in/toddwolfson/") LinkedIn link
+              #how-do-we-get-started
+                h5 How do we get started?
                 ul
                   li
                     = "Contact me "
@@ -95,6 +103,7 @@ html(lang="en")
                   li I'll reply within 24 hours (usually 1-2 hours)
                   li We talk and verify that I am suitable to mentor you
                   li We schedule a time and use Zoom to screenshare through your problems
+                  li We can do a one-shot version or a long-term collaboration
               #reviews
                 h5
                   ="Reviews, "
