@@ -197,7 +197,9 @@ html(lang="en")
                         - inputName = 'q4_typeA';
                         label(for="goals") Briefly describe what you'd like mentoring on *
                         - oalsplace
-                        textarea#goals.form-control(name=inputName, required, placeholder="(e.g. Looking to learn about data structures, want to improve full-stack knowledge)")
+                        textarea#goals.form-control(name=inputName, required, rows="4", maxlength="300", placeholder="(e.g. Looking to learn about data structures, want to improve full-stack knowledge)")
+                        small.form-text.text-muted
+                          | Maximum 300 characters
                       .form-group
                         - inputName = 'q5_whenWould';
                         label(for="meeting_time") When would your ideal first session be? *
@@ -209,6 +211,7 @@ html(lang="en")
                           = "Powered by "
                           a(href="https://www.jotform.com/") JotForm
                       input(type="hidden", id="simple_spc", name="simple_spc" value="202376968124057")
+                      //- DEV: If `script` is missed, then it will add a Captcha prompt on submission (nice)
                       script(type="text/javascript").
                         document.getElementById("si" + "mple" + "_spc").value = "202376968124057-202376968124057";
               .profile-section
