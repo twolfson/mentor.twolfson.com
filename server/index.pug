@@ -70,7 +70,7 @@ html(lang="en")
                 | Location: San Francisco, CA
                 br
                 | Hours: 10AM-9PM PST
-              p
+              p.mb-0
                 a.btn.btn-primary.btn-block(href="#contact") Contact
                 a.btn.btn-secondary.btn-block(href="https://www.timeanddate.com/worldclock/converter.html?p1=224") Compare timezone
         .col-12.col-lg-8.col-xl-9
@@ -125,9 +125,10 @@ html(lang="en")
                   li We can do a one-shot version or a long-term collaboration
               .profile-section
                 h3#reviews
-                  ="Reviews, "
-                  span(aria-label="5 star") 5.0 &#11088;
-                  =" (50 reviews)"
+                  span.d-inline-block Reviews,&nbsp;
+                  span.d-inline-block(aria-label="5 star") 5.0 &#11088;
+                  = " "
+                  span.d-inline-block= "(50 reviews)"
                 - let reviews = [];
                 - reviews.push({content: 'Amazing tutor with lots of insight on different systems front and back end.', signature: 'Jammie T., July 2020'});
                 - reviews.push({content: 'Total cool dude knew his stuff and was able to explain things to me the way I needed things explained!', signature: 'Erik A., July 2020'});
