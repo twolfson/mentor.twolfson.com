@@ -17,6 +17,7 @@ Task list:
   - Employment? Nah
 - [x] Link to review sources
 - [x] Payments accepted at the bottom
+- Sanity check mobile looks good still
 
 ## Commands to document
 - Install dependencies
