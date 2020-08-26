@@ -124,32 +124,35 @@ html(lang="en")
               #contact
                 h5 Contact
                 .row
-                  .col-10.col-md-7
+                  .col-12.col-md-7
                     //- https://www.jotform.com/build/202376968124057/publish/embed
                     //- Initially written as a Bootstrap form them updated with "Source Code" embed content
+                    //- Note: Length validation is browser-side only it seems =/
                     form(action="https://submit.jotform.com/submit/202376968124057/", method="post", name="form_202376968124057", id="202376968124057", accept-charset="utf-8", autocomplete="on")
                       <input type="hidden" name="formID" value="202376968124057" />
                       <input type="hidden" id="JWTContainer" value="" />
                       <input type="hidden" id="cardinalOrderNumber" value="" />
                       //- Define pass-through variables for form elements
-                      - let inputId;
+                      - let inputName;
                       .form-group
-                        //- - inputId = 'email';
-                        - inputId = 'input_3';
-                        label(for=inputId) Email address *
-                        input.form-control(id=inputId, type="email", required, placeholder="hello@world.com")
+                        - inputName = 'q3_emailAddress';
+                        label(for="email") Email address *
+                        input#email.form-control(name=inputName, type="email", required, placeholder="hello@world.com")
                       .form-group
-                        //- - inputId = 'goals';
-                        - inputId = 'input_4';
-                        label(for=inputId) Briefly describe what you'd like mentoring on *
+                        - inputName = 'q4_typeA';
+                        label(for="goals") Briefly describe what you'd like mentoring on *
                         - oalsplace
-                        textarea.form-control(id=inputId, required, placeholder="(e.g. Looking to learn about data structures, want to improve full-stack knowledge)")
+                        textarea#goals.form-control(name=inputName, required, placeholder="(e.g. Looking to learn about data structures, want to improve full-stack knowledge)")
                       .form-group
-                        //- - inputId = 'meeting_time';
-                        - inputId = 'input_5';
-                        label(for=inputId) When would your ideal first session be? *
-                        input.form-control(id=inputId, type="text", required, placeholder="(e.g. Tuesday at 2PM PST would be great!)")
-                      button.btn.btn-primary(type="submit") Submit
+                        - inputName = 'q5_whenWould';
+                        label(for="meeting_time") When would your ideal first session be? *
+                        input#meeting_time.form-control(name=inputName, type="text", required, placeholder="(e.g. Tuesday at 2PM PST would be great!)")
+                      p
+                        button.btn.btn-primary(type="submit") Submit
+                      p
+                        i.text-muted
+                          = "Powered by "
+                          a(href="https://www.jotform.com/") JotForm
                       input(type="hidden", id="simple_spc", name="simple_spc" value="202376968124057")
                       script(type="text/javascript").
                         document.getElementById("si" + "mple" + "_spc").value = "202376968124057-202376968124057";
