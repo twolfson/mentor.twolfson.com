@@ -43,12 +43,16 @@ exports.generateBundler = function () {
 async function main() {
   let bundler = exports.generateBundler();
   if (process.env.NODE_ENV === ENV_DEVELOPMENT) {
-    console.info(`Default page will be http://localhost:${options.port}/index.html`);
+    // Start our server as per normal
     let server = await bundler.serve(options.port, options.https);
     // Skipping browser open logic
-    console.log(server._events.request);
-    server._events.request = function () {
-      console.log('hey');
+
+    // Override `/` handler to serve our `index.html`
+    // https://github.com/parcel-bundler/parcel/blob/v1.10.3/src/Server.js#L43-L72
+    let _handleRequest = server._events.request;
+    server._events.request = function (req, res, next) {
+      console.log(req.url === '/' || req.url.startsWith('/?'));
+      return _handleRequest.call(this, req, res, next);
     };
   } else if (process.env.NODE_ENV === ENV_PRODUCTION) {
     bundler.bundle();
