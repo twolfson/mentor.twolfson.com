@@ -1,0 +1,13 @@
+extends layout.pug
+
+block pageConfig
+  - pageConfig.showLeftCard = false;
+
+block seo
+  //- Page isn't tracked so we can keep it light
+  title Submission success!
+  meta(name="robots", content="noindex")
+
+block mainCard
+  h3.h4 Submission success!
+  p.mb-0 helloooo
