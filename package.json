@@ -7,6 +7,8 @@
   "devDependencies": {
     "chai": "~4.2.0",
     "cheerio": "~1.0.0-rc.3",
+    "eslint": "~7.7.0",
+    "eslint-config-twolfson": "~1.0.0",
     "foundry": "~4.4.2",
     "foundry-release-git": "~2.0.3",
     "foundry-release-npm": "~2.0.2",
@@ -16,9 +18,11 @@
     "sass": "~1.26.10"
   },
   "scripts": {
-    "start": "node server/index.js",
     "build": "rm -r dist && NODE_ENV=production node server/index.js",
-    "test": "NODE_ENV=test mocha test/"
+    "lint": "eslint server/ test/ --max-warnings 0",
+    "precheck": "eslint server/ test/",
+    "start": "node server/index.js",
+    "test": "npm run precheck && NODE_ENV=test mocha test/ && npm run lint"
   },
   "author": "Todd Wolfson <todd@twolfson.com> (http://twolfson.com/)",
   "license": "Unlicense",
