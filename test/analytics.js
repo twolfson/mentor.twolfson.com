@@ -4,7 +4,7 @@ const { expect } = require('chai');
 const { generateBundler } = require('../server/index.js');
 
 // Define our tests
-describe('All generated HTML pages', function () {
+describe('Root/Contact page', function () {
   // DEV: If this becomes common, then memoize results in a common test file
   before(async function generateHTML() {
     this.timeout(30e3);
@@ -43,5 +43,11 @@ describe('All generated HTML pages', function () {
       let $formEl = this.$(formEl);
       expect($formEl.attr('id')).to.not.eq(undefined, $formEl + ' id');
     });
+  });
+
+  it('uses `_blank` on conversion links', function () {
+    let $conversionLink = this.$('#contact__email-link');
+    expect($conversionLink.length).to.eq(1);
+    expect($conversionLink.attr('target')).to.eq('_blank');
   });
 });

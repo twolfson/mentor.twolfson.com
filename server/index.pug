@@ -168,7 +168,7 @@ block content
                     -   '',
                     -   '(replace the {{ }} content with your own words)',
                     - ].join('\n');
-                    a(href=`mailto:todd@twolfson.com?subject=${e(emailSubject)}&body=${e(emailBody)}`, id="contact__email-link")
+                    a(href=`mailto:todd@twolfson.com?subject=${e(emailSubject)}&body=${e(emailBody)}`, target="_blank", id="contact__email-link")
                       | todd@twolfson.com
                     | &nbsp;
                   span.d-inline-block= "or fill out the form below"
@@ -238,7 +238,7 @@ block content
               strong My question isn't on here
               p.mb-0
                 = "Feel free to send me an email at "
-                a(href="mailto:todd@twolfson.com?subject=Programming mentor question", id="questions__email-link") todd@twolfson.com
+                a(href="mailto:todd@twolfson.com?subject=Programming mentor question", target="_blank", id="questions__email-link") todd@twolfson.com
           .profile-section.mb-0
             h3#ready-to-get-started Ready to get started?
             a.btn.btn-primary(href="#contact", id="questions__contact-link") Contact me via the form above
