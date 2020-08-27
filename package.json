@@ -14,9 +14,9 @@
     "sass": "~1.26.10"
   },
   "scripts": {
-    "start": "parcel server/index.pug server/robots.txt --port 5000",
-    "build": "rm -r dist && NODE_ENV=production parcel build server/index.pug server/robots.txt",
-    "test": "mocha test/ && npm run build"
+    "start": "node server/index.js",
+    "build": "rm -r dist && NODE_ENV=production node server/index.js",
+    "test": "mocha test/"
   },
   "author": "Todd Wolfson <todd@twolfson.com> (http://twolfson.com/)",
   "license": "Unlicense",
