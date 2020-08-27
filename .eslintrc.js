@@ -1,4 +1,6 @@
-const RULE_IGNORE = 0;
+const OFF = 'off';
+const WARN = 'warn';
+// const ERROR = 'error';
 module.exports = {
   // Inherit from our package
   extends: 'eslint-config-twolfson',
@@ -7,7 +9,14 @@ module.exports = {
   },
 
   rules: {
-    'comma-dangle': RULE_IGNORE,
+    'comma-dangle': [WARN, {
+      arrays: 'only-multiline',
+      objects: 'only-multiline',
+      imports: 'never',
+      exports: 'never',
+      functions: 'never',
+    }],
+    'object-curly-spacing': OFF,
   },
 
   // Configure our environment

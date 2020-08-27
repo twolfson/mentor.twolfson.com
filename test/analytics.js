@@ -1,7 +1,7 @@
 // Load in our dependencies
 const cheerio = require('cheerio');
-const {expect} = require('chai');
-const {generateBundler} = require('../server/index.js');
+const { expect } = require('chai');
+const { generateBundler } = require('../server/index.js');
 
 // Define our tests
 describe('All generated HTML pages', function () {
