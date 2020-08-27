@@ -200,7 +200,7 @@ html(lang="en")
               .profile-section
                 h3#contact Contact
                 .row
-                  .col-12.col-md-7
+                  .col-12
                     p
                       span.d-inline-block
                         = "Message me at "
@@ -225,6 +225,8 @@ html(lang="en")
                     //- https://www.jotform.com/build/202376968124057/publish/embed
                     //- Initially written as a Bootstrap form them updated with "Source Code" embed content
                     //- Note: Length validation is browser-side only it seems =/
+                .row
+                  .col-12.col-md-7
                     form#contact-form(action="https://submit.jotform.com/submit/202376968124057/", method="post", accept-charset="utf-8", autocomplete="on")
                       <input type="hidden" name="formID" value="202376968124057" />
                       <input type="hidden" id="JWTContainer" value="" />
