@@ -178,9 +178,9 @@ block content
             .row
               .col-12.col-md-7
                 form#contact-form(action="https://submit.jotform.com/submit/202376968124057/", method="post", accept-charset="utf-8", autocomplete="on")
-                  <input type="hidden" name="formID" value="202376968124057" />
-                  <input type="hidden" id="JWTContainer" value="" />
-                  <input type="hidden" id="cardinalOrderNumber" value="" />
+                  input(type="hidden", name="formID", value="202376968124057")
+                  input(type="hidden", id="JWTContainer", value="")
+                  input(type="hidden", id="cardinalOrderNumber", value="")
                   //- Define pass-through variables for form elements
                   - let inputName;
                   .form-group
