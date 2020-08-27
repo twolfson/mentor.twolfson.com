@@ -1,12 +1,12 @@
 // Load in our dependencies
 const cheerio = require('cheerio');
-const { expect } = require('chai');
-const { generateBundler } = require('../server/index.js');
+const {expect} = require('chai');
+const {generateBundler} = require('../server/index.js');
 
 // Define our tests
 describe('All generated HTML pages', function () {
   // DEV: If this becomes common, then memoize results in a common test file
-  before(async function generateHTML () {
+  before(async function generateHTML() {
     this.timeout(30e3);
     this.bundler = generateBundler();
     this.bundle = await this.bundler.bundle();
@@ -14,7 +14,7 @@ describe('All generated HTML pages', function () {
     this.htmlStr = Array.from(this.bundle.childBundles)[0].entryAsset.generated.html;
     expect(this.htmlStr).to.be.a('string');
   });
-  before(function generateCheerio () {
+  before(function generateCheerio() {
     this.$ = cheerio.load(this.htmlStr);
   });
 

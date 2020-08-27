@@ -44,7 +44,7 @@ async function main() {
   let bundler = exports.generateBundler();
   if (process.env.NODE_ENV === ENV_DEVELOPMENT) {
     // Start our server as per normal
-    let server = await bundler.serve(options.port, options.https); // eslint-ignore no-unused-vars
+    let server = await bundler.serve(options.port, options.https); // eslint-disable-line no-unused-vars
     // Skipping browser open logic
   } else if (process.env.NODE_ENV === ENV_PRODUCTION) {
     bundler.bundle();
