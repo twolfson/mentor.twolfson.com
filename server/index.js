@@ -44,6 +44,7 @@ async function main() {
   let bundler = exports.generateBundler();
   if (process.env.NODE_ENV === ENV_DEVELOPMENT) {
     // Start our server as per normal
+    console.info(`Default page will be http://localhost:${options.port}/index.html`);
     let server = await bundler.serve(options.port, options.https); // eslint-disable-line no-unused-vars
     // Skipping browser open logic
   } else if (process.env.NODE_ENV === ENV_PRODUCTION) {
