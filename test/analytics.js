@@ -10,8 +10,9 @@ describe('Root/Contact page', function () {
     this.timeout(30e3);
     this.bundler = generateBundler();
     this.bundle = await this.bundler.bundle();
-    // DEV: We could `.map` the `childBundles` set but this is easier
-    this.htmlStr = Array.from(this.bundle.childBundles)[0].entryAsset.generated.html;
+
+    let rootBundle = Array.from(this.bundle.childBundles).find((bundle) => bundle.name.endsWith('/index.html'));
+    this.htmlStr = rootBundle.entryAsset.generated.html;
     expect(this.htmlStr).to.be.a('string');
   });
   before(function generateCheerio() {
