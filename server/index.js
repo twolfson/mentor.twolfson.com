@@ -46,6 +46,10 @@ async function main() {
     console.info(`Default page will be http://localhost:${options.port}/index.html`);
     let server = await bundler.serve(options.port, options.https);
     // Skipping browser open logic
+    console.log(server._events.request);
+    server._events.request = function () {
+      console.log('hey');
+    };
   } else if (process.env.NODE_ENV === ENV_PRODUCTION) {
     bundler.bundle();
   } else {
