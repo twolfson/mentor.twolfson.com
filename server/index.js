@@ -42,6 +42,7 @@ exports.generateBundler = function () {
 
 // If this file is being run via the CLI, then run the following
 // https://github.com/parcel-bundler/parcel/blob/v1.10.3/src/cli.js#L213-L228
+/* eslint-disable no-console */
 async function main() {
   let bundler = exports.generateBundler();
   if (process.env.NODE_ENV === ENV_DEVELOPMENT) {
