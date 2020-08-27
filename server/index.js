@@ -4,6 +4,7 @@ const Bundler = require('parcel');
 
 // Define our constants
 const ENV_DEVELOPMENT = 'development';
+const ENV_TEST = 'test';
 const ENV_PRODUCTION = 'production';
 
 // Fallback our environment
@@ -20,20 +21,27 @@ const options = {
 };
 
 // Extend options on a per-environment basis
-if (process.env.NODE_ENV === ENV_PRODUCTION) {
+if (process.env.NODE_ENV === ENV_DEVELOPMENT) {
+  // No changes
+} else if (process.env.NODE_ENV === ENV_TEST) {
   // DEV: This line seems to tell program to quit when done
   //   https://github.com/parcel-bundler/parcel/blob/v1.10.3/src/cli.js#L198
+  options.production = true;
+  options.logLevel = 2; // Errors and warnings only (no info)
+} else if (process.env.NODE_ENV === ENV_PRODUCTION) {
   options.production = true;
 }
 
 // Generate and export a bundler for extension
 // https://github.com/parcel-bundler/parcel/blob/v1.10.3/src/cli.js#L213-L228
-const bundler = new Bundler(entryFiles, options);
-module.exports = bundler;
+exports.generateBundler = function () {
+  return new Bundler(entryFiles, options);
+};
 
 // If this file is being run via the CLI, then run the following
 // https://github.com/parcel-bundler/parcel/blob/v1.10.3/src/cli.js#L213-L228
 async function main() {
+  let bundler = exports.generateBundler();
   if (process.env.NODE_ENV === ENV_DEVELOPMENT) {
     console.info(`Default page will be http://localhost:${options.port}/index.html`);
     let server = await bundler.serve(options.port, options.https);

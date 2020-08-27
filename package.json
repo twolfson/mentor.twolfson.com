@@ -5,6 +5,7 @@
   "main": null,
   "dependencies": {},
   "devDependencies": {
+    "chai": "~4.2.0",
     "foundry": "~4.4.2",
     "foundry-release-git": "~2.0.3",
     "foundry-release-npm": "~2.0.2",
@@ -16,7 +17,7 @@
   "scripts": {
     "start": "node server/index.js",
     "build": "rm -r dist && NODE_ENV=production node server/index.js",
-    "test": "mocha test/"
+    "test": "NODE_ENV=test mocha test/"
   },
   "author": "Todd Wolfson <todd@twolfson.com> (http://twolfson.com/)",
   "license": "Unlicense",
