@@ -1,5 +1,8 @@
 extends layout.pug
 
+block pageConfig
+  - pageConfig.showLeftCard = true;
+
 block seo
   //- SEO
   //- https://www.searchenginewatch.com/2018/04/04/a-quick-and-easy-guide-to-meta-tags-in-seo/
@@ -36,3 +39,178 @@ block seo
   //- Not required despite Moz recommendation, there is now an `fb:app_id` but we lack that
   //- meta(property="og:site_name", content="Site Name, i.e. Moz")
   //- meta(property="fb:admins", content="Facebook numeric ID")
+
+block mainCard
+  .profile-section
+    h3.h4 Work with a former Uber and startup software engineer as your mentor
+
+  .profile-section
+    h3#skills Skills
+    p.mb-2
+      - let skills = [];
+      - skills.push("JavaScript (9 years)");
+      - skills.push("Node.js (7 years)");
+      - skills.push("Python (6 years)");
+      - skills.push("Ruby (4 years)");
+      - skills.push("HTML/CSS (14 years)");
+      - skills.push("SQL (9 years)");
+      - skills.push("Ruby on Rails (2 years)");
+      - skills.push("bash");
+      - skills.push("git");
+      //- - skills.push("Express");
+      //- - skills.push("Flask");
+      //- - skills.push("Sinatra");
+      - skills.push("OAuth2");
+      - skills.push("DevOps");
+      //- - skills.push("MVC");
+      //- - skills.push("ORM");
+      - skills.push("AWS Lambda");
+      for skill, i in skills
+        span.badge.badge-outline-text.badge--text-normal.mb-1= skill
+        if i != (skills.length - 1)
+          = " "
+    p
+      = "Authored over "
+      a(href="https://github.com/twolfson?tab=repositories&type=source", id="skills__github-repos-link") 130 repos/packages
+      = " with over "
+      a(href="https://twolfson.com/projects", id="skills__projects-link") 1200 stars
+      = " and 14 years of experience"
+    p
+      a.btn.btn-sm.btn-info(href="https://github.com/twolfson", id="skills__github-link") GitHub link
+      = " "
+      a.btn.btn-sm.btn-info(href="https://www.linkedin.com/in/toddwolfson/", id="skills__linkedin-link") LinkedIn link
+
+  .profile-section
+    h3#how-do-we-get-started How do we get started?
+    ul
+      li
+        = "Contact me "
+        a(href="#contact", id="get-started__contact-link") via the form below
+      //- DEV: Timing should correspond with form itself
+      li I'll reply within 24 hours (usually 1-2 hours)
+      li We talk and verify that I am suitable to mentor you
+      li We schedule a time and use Zoom to screenshare through your problems
+      li We can do a one-shot version or a long-term collaboration
+  .profile-section
+    h3#reviews
+      span.d-inline-block Reviews,&nbsp;
+      span.d-inline-block(aria-label="5 star") 5.0 &#11088;
+      = " "
+      span.d-inline-block= "(50 reviews)"
+    - let reviews = [];
+    - reviews.push({content: 'Amazing tutor with lots of insight on different systems front and back end.', signature: 'Jammie T., July 2020'});
+    - reviews.push({content: 'Total cool dude knew his stuff and was able to explain things to me the way I needed things explained!', signature: 'Erik A., July 2020'});
+    - reviews.push({content: 'Todd was very helpful in walking me though a structured process for getting around a coding block I was facing. Thanks!', signature: 'Anthony L., July 2020'});
+    - reviews.push({content: 'I totally recommend Todd. He has impressive programming skills and the ability to explain, which is a rare combination.', signature: 'Marcela, August 2020'});
+    //- - reviews.push({content: 'Clear thinker and knowledgeable across a range of topics and was very good at explaining concepts.', signature: 'Sam F., July 2020'});
+    .row
+      for review, i in reviews
+        .col-xxs-12.col-6.col-xl-4(class=(i === reviews.length -1 ? 'd-xxs-none d-xl-none' : ''))
+          .card.mb-3
+            .card-body
+              p.mb-2.text-center(aria-label="5 star") &#11088;&#11088;&#11088;&#11088;&#11088;
+              p.mb-2= review.content
+              p.mb-0
+                i= "- " + review.signature
+    .row
+      .col-12
+        .card
+          .card-body.text-center
+            = `View all ${reviewCount} reviews `
+            a(href="https://www.codementor.io/@twolfson", id="reviews__view-all-link") here
+  .profile-section
+    h3#contact Contact
+    .row
+      .col-12
+        p
+          span.d-inline-block
+            = "Message me at "
+            - let emailSubject = "Programming mentor request";
+            - let emailBody = [
+            -   'Hi Todd,',
+            -   'I\'m looking for:',
+            -   '{{Brief description of what you\'re looking for mentoring on}}',
+            -   '(e.g. Looking to learn about data structures, want to improve full-stack knowledge)',
+            -   '',
+            -   'My ideal first session would be at:',
+            -   '{{Date/time of ideal first session}}',
+            -   '(e.g. Tuesday at 2PM PST would be great!)',
+            -   '',
+            -   '- {{Name}}',
+            -   '',
+            -   '(replace the {{ }} content with your own words)',
+            - ].join('\n');
+            a(href=`mailto:todd@twolfson.com?subject=${e(emailSubject)}&body=${e(emailBody)}`, id="contact__email-link")
+              | todd@twolfson.com
+            | &nbsp;
+          span.d-inline-block= "or fill out the form below"
+        //- https://www.jotform.com/build/202376968124057/publish/embed
+        //- Initially written as a Bootstrap form them updated with "Source Code" embed content
+        //- Note: Length validation is browser-side only it seems =/
+    .row
+      .col-12.col-md-7
+        form#contact-form(action="https://submit.jotform.com/submit/202376968124057/", method="post", accept-charset="utf-8", autocomplete="on")
+          <input type="hidden" name="formID" value="202376968124057" />
+          <input type="hidden" id="JWTContainer" value="" />
+          <input type="hidden" id="cardinalOrderNumber" value="" />
+          //- Define pass-through variables for form elements
+          - let inputName;
+          .form-group
+            - inputName = 'q3_emailAddress';
+            label(for="email") Email address *
+            input#email.form-control(name=inputName, type="email", required, placeholder="hello@world.com")
+          .form-group
+            - inputName = 'q4_typeA';
+            label(for="goals") Briefly describe what you'd like mentoring on *
+            - oalsplace
+            textarea#goals.form-control(name=inputName, required, rows="4", maxlength="300", placeholder="(e.g. Looking to learn about data structures, want to improve full-stack knowledge)")
+            small.form-text.text-muted
+              | Maximum 300 characters
+          .form-group
+            - inputName = 'q5_whenWould';
+            label(for="meeting_time") When would your ideal first session be? *
+            input#meeting_time.form-control(name=inputName, type="text", required, placeholder="(e.g. Tuesday at 2PM PST would be great!)")
+          p
+            button.btn.btn-primary(type="submit") Submit
+          p.mb-0
+            i.text-muted
+              = "Powered by "
+              a(href="https://www.jotform.com/", id="contact__jotform-link") JotForm
+          input(type="hidden", id="simple_spc", name="simple_spc" value="202376968124057")
+          //- DEV: If `script` is missed, then it will add a Captcha prompt on submission (nice)
+          script(type="text/javascript").
+            document.getElementById("si" + "mple" + "_spc").value = "202376968124057-202376968124057";
+  .profile-section
+    h3#questions Still have questions?
+    p Let's try to answer them below
+    .row.question: .col-12.col-md-8
+      strong Is mentoring really for me?
+      p
+        | If you're reading this site, then probably yes.
+      p
+        | I work with Bootcamp students, Computer Science (CS) majors, freelancers, full-time professionals, and hobbyists.
+      p
+        | The common thread: They all want to learn and improve their skills.
+    .row.question: .col-12.col-md-8
+      strong Your rate is kind of expensive, do you offer student discounts?
+      p Sadly, I don't. You're getting what you pay for, a first-class experience from a veteran professional.
+      p I'm glad to talk if you need more reassurance though =)
+    .row.question: .col-12.col-md-8
+      strong What payments do you accept?
+      p
+        a(href="https://www.paypal.com/", id="payments__paypal-link") PayPal
+        =", "
+        a(href="https://venmo.com/", id="payments__venmo-link") Venmo
+        =", "
+        a(href="https://transferwise.com/", id="payments__transferwise-link") TransferWise
+        =", "
+        a(href="https://www.coinbase.com/", id="payments__crypto-link") Cryptocurrency
+        =", really anything as long as we are both okay with it."
+    .row.question: .col-12.col-md-8
+      strong My question isn't on here
+      p.mb-0
+        = "Feel free to send me an email at "
+        a(href="mailto:todd@twolfson.com?subject=Programming mentor question", id="questions__email-link") todd@twolfson.com
+  .profile-section.mb-0
+    h3#ready-to-get-started Ready to get started?
+    a.btn.btn-primary(href="#contact", id="questions__contact-link") Contact me via the form above
