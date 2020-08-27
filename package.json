@@ -18,6 +18,7 @@
   },
   "scripts": {
     "build": "rm -r dist && NODE_ENV=production node server/index.js",
+    "fix-package-lock": "npm install --package-lock-only",
     "lint": "eslint *.js server/ test/ --max-warnings 0",
     "precheck": "eslint *.js server/ test/",
     "start": "node server/index.js",
