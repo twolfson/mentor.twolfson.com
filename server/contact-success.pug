@@ -1,13 +1,13 @@
 extends layout.pug
 
-block pageConfig
-  - pageConfig.showLeftCard = false;
-
 block seo
   //- Page isn't tracked so we can keep it light
-  title Submission success!
+  title Thank you!
   meta(name="robots", content="noindex")
 
-block mainCard
-  h3.h4 Submission success!
-  p.mb-0 helloooo
+block content
+  h3.h4 Thank you!
+  p.mb-0
+    | Your submission has been received.
+    br
+    | I will reply within 24 hours (usually 1-2 hours).

@@ -62,41 +62,8 @@ html(lang="en")
           h1 Programming mentor
           h2 Todd Wolfson
           hr.hr--header
-      .row
-        if pageConfig.showLeftCard
-          .col-12.col-lg-4.col-xl-3
-            //- mb-3 spacing for cards next to cards on mobile view
-            .card.mb-3
-              - const avatarText = "Photo of Todd Wolfson";
-              img.d-none.d-lg-block.card-img-top(src=getGravatarUrl(400) alt=avatarText)
-              .card-body
-                .media
-                  img.d-lg-none.mr-3(src=getGravatarUrl(64) alt=avatarText)
-                  p.media-body
-                    | Todd Wolfson
-                    br
-                    | Senior Software Engineer
-                    br
-                    span(aria-label="5 star") 5.0 &#11088;
-                    = " ("
-                    a(href="#reviews", id="profile__reviews-link") #{reviewCount} reviews
-                    | )
-                p
-                  | $120 / hour
-                  br
-                  | $10 / 5 minutes
-                p
-                  | Location: San Francisco, CA
-                  br
-                  | Hours: 10AM-9PM PST
-                p.mb-0
-                  a.btn.btn-primary.btn-block(href="#contact", id="profile__contact-link") Contact
-                  a.btn.btn-secondary.btn-block(href="https://www.timeanddate.com/worldclock/converter.html?p1=224", id="profile__timezone-link") Compare timezone
-        .col-12.col-lg-8.col-xl-9
-          .card
-            .card-body
-              block mainCard
-                - throw new Error('Expected `mainCard` block in `.pug` but there was none');
+      block content
+        - throw new Error('Expected `content` block in `.pug` but there was none');
       .row
         .col-12.text-center
           hr.hr--footer
