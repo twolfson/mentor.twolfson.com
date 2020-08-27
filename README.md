@@ -1,4 +1,5 @@
-# mentor.twolfson.com
+# mentor.twolfson.com [![Build status](https://circleci.com/gh/twolfson/mentor.twolfson.com/tree/master.svg?style=svg)](https://circleci.com/gh/twolfson/mentor.twolfson.com/tree/master)
+
 Website for twolfson's mentoring service
 
 https://mentor.twolfson.com/
