@@ -27,9 +27,21 @@ describe('All generated HTML pages', function () {
     });
   });
 
-  it.skip('all elements have unique ids', function () {
+  it('all elements have unique ids', function () {
+    let $idEls = this.$('[id]');
+    expect($idEls.length).to.be.greaterThan(3);
+    let ids = $idEls.toArray().map((idEl) => this.$(idEl).attr('id'));
+    let idSet = new Set(ids);
+    expect(Array.from(idSet)).to.deep.equal(ids);
   });
 
-  it.skip('has an id on each `form` element', function () {
+  it('has an id on each `form` element', function () {
+    let $formEls = this.$('form');
+    // DEV: Using `eq(1)` until we can test multiple forms
+    expect($formEls.length).to.eq(1);
+    $formEls.each((i, formEl) => {
+      let $formEl = this.$(formEl);
+      expect($formEl.attr('id')).to.not.eq(undefined, $formEl + ' id');
+    });
   });
 });
