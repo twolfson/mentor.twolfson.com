@@ -8,6 +8,7 @@
     "foundry": "~4.4.2",
     "foundry-release-git": "~2.0.3",
     "foundry-release-npm": "~2.0.2",
+    "mocha": "~8.1.2",
     "parcel": "~1.12.4",
     "pug": "~3.0.0",
     "sass": "~1.26.10"
@@ -15,7 +16,7 @@
   "scripts": {
     "start": "parcel server/index.pug server/robots.txt --port 5000",
     "build": "rm -r dist && NODE_ENV=production parcel build server/index.pug server/robots.txt",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/ && npm run build"
   },
   "author": "Todd Wolfson <todd@twolfson.com> (http://twolfson.com/)",
   "license": "Unlicense",
