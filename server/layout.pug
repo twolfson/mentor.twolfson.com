@@ -29,24 +29,24 @@ html(lang="en")
 
     //- Required meta tags
     meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
 
     //- Favicon generated via https://realfavicongenerator.net/
     //- Attribution: Book by beth bolton from the Noun Project
     //-   https://thenounproject.com/search/?q=book&i=1557574
     //-   Stored in `resources` folder
-    link(rel="icon", type="image/png", sizes="32x32", href="../browser/images/favicon-32x32.png")
-    link(rel="icon", type="image/png", sizes="16x16", href="../browser/images/favicon-16x16.png")
-    link(rel="shortcut icon", href="../browser/images/favicon.ico")
+    link(rel="icon" type="image/png" sizes="32x32" href="../browser/images/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="../browser/images/favicon-16x16.png")
+    link(rel="shortcut icon" href="../browser/images/favicon.ico")
 
     //- Bootstrap CSS
-    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z", crossorigin="anonymous")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
 
     block seo
       - throw new Error('Expected `seo` block in `.pug` but there was none (e.g. title, meta tags)');
 
     //- Custom CSS
-    link(rel="stylesheet", href="../browser/css/main.scss")
+    link(rel="stylesheet" href="../browser/css/main.scss")
 
     //- No Sentry for site as there's nothing to break...
 
@@ -57,7 +57,7 @@ html(lang="en")
     //- Google Tag Manager: "Paste this code immediately after the opening <body> tag"
     //- Omitting `noscript`, respect no analytics for those who don't want it
     //- if showAnalytics
-      //- noscript: iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-M4ZRN6Z", height="0", width="0", style="display:none;visibility:hidden")
+      //- noscript: iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-M4ZRN6Z" height="0" width="0" style="display:none;visibility:hidden")
 
     //- Start on page content
     .container
@@ -73,11 +73,11 @@ html(lang="en")
           hr.hr--footer
           p.text-muted
             = "Site built on "
-            a(href="https://parceljs.org/", id="footer__parcel-link") Parcel
+            a(href="https://parceljs.org/" id="footer__parcel-link") Parcel
             = ". "
             = "View repo on "
-            a(href="https://github.com/twolfson/mentor.twolfson.com", id="footer__github-link") GitHub
+            a(href="https://github.com/twolfson/mentor.twolfson.com" id="footer__github-link") GitHub
     //- Optional JS for Bootstrap, omitted for now
-    //- script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
-    //- script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js", integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN", crossorigin="anonymous")
-    //- script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV", crossorigin="anonymous")
+    //- script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
+    //- script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous")
+    //- script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous")
