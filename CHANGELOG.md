@@ -1,4 +1,7 @@
 # mentor.twolfson.com
+## 2020.0830.0023
+- Removed commas from Pug to make copy/paste with HTML much easier
+
 ## 2020.0830.0007
 - Overall goal: Make it easier to track conversions by keeping a page on site somehow
 - Added views layout and contact success page
