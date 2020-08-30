@@ -169,7 +169,7 @@ block content
                     -   '(replace the {{ }} content with your own words)',
                     - ].join('\n');
                     //- DEV: `_blank` might appear to use same tab in Firefox but it will work in Chrome, https://stackoverflow.com/a/24924745
-                    a(href=`mailto:todd@twolfson.com?subject=${e(emailSubject)}&body=${e(emailBody)}`, target="_blank", id="contact__email-link")
+                    a(href=`mailto:todd@twolfson.com?subject=${e(emailSubject)}&body=${e(emailBody)}` target="_blank" id="contact__email-link")
                       | todd@twolfson.com
                     | &nbsp;
                   span.d-inline-block= "or fill out the form below"
@@ -187,18 +187,18 @@ block content
                   .form-group
                     - inputName = 'q3_emailAddress';
                     label(for="email") Email address *
-                    input#email.form-control(name=inputName, type="email", required, placeholder="hello@world.com")
+                    input#email.form-control(name=inputName type="email" required placeholder="hello@world.com")
                   .form-group
                     - inputName = 'q4_typeA';
                     label(for="goals") Briefly describe what you'd like mentoring on *
                     - oalsplace
-                    textarea#goals.form-control(name=inputName, required, rows="4", maxlength="300", placeholder="(e.g. Looking to learn about data structures, want to improve full-stack knowledge)")
+                    textarea#goals.form-control(name=inputName required rows="4" maxlength="300" placeholder="(e.g. Looking to learn about data structures, want to improve full-stack knowledge)")
                     small.form-text.text-muted
                       | Maximum 300 characters
                   .form-group
                     - inputName = 'q5_whenWould';
                     label(for="meeting_time") When would your ideal first session be? *
-                    input#meeting_time.form-control(name=inputName, type="text", required, placeholder="(e.g. Tuesday at 2PM PST would be great!)")
+                    input#meeting_time.form-control(name=inputName type="text" required placeholder="(e.g. Tuesday at 2PM PST would be great!)")
                   p
                     button.btn.btn-primary(type="submit") Submit
                   p.mb-0
@@ -227,13 +227,13 @@ block content
             .row.question: .col-12.col-md-8
               strong What payments do you accept?
               p
-                a(href="https://www.paypal.com/", id="payments__paypal-link") PayPal
+                a(href="https://www.paypal.com/" id="payments__paypal-link") PayPal
                 =", "
-                a(href="https://venmo.com/", id="payments__venmo-link") Venmo
+                a(href="https://venmo.com/" id="payments__venmo-link") Venmo
                 =", "
-                a(href="https://transferwise.com/", id="payments__transferwise-link") TransferWise
+                a(href="https://transferwise.com/" id="payments__transferwise-link") TransferWise
                 =", "
-                a(href="https://www.coinbase.com/", id="payments__crypto-link") Cryptocurrency
+                a(href="https://www.coinbase.com/" id="payments__crypto-link") Cryptocurrency
                 =", really anything as long as we are both okay with it."
             .row.question: .col-12.col-md-8
               strong My question isn't on here
