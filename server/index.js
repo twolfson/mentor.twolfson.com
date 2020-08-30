@@ -12,9 +12,8 @@ process.env.NODE_ENV = process.env.NODE_ENV || ENV_DEVELOPMENT;
 
 // Set up Parcel configuration
 const entryFiles = [
-  // DEV: All HMR files are specified first, https://github.com/parcel-bundler/parcel/issues/2340#issuecomment-593166548
-  //   so all HTML files go first, using a glob
-  __dirname + '/{index,contact-success}.pug',
+  __dirname + '/index.pug',
+  __dirname + '/contact-success.pug',
   __dirname + '/robots.txt',
 ];
 const options = {

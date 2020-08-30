@@ -49,6 +49,10 @@ html(lang="en")
     link(rel="stylesheet", href="../browser/css/main.scss")
 
     //- No Sentry for site as there's nothing to break...
+
+    //- If we're in development, then provide placeholder JS for HMR to hook into
+    if process.env.NODE_ENV === 'development'
+      script(src="../browser/js/index.js")
   body
     //- Google Tag Manager: "Paste this code immediately after the opening <body> tag"
     //- Omitting `noscript`, respect no analytics for those who don't want it
