@@ -168,6 +168,7 @@ block content
                     -   '',
                     -   '(replace the {{ }} content with your own words)',
                     - ].join('\n');
+                    //- DEV: `_blank` might appear to use same tab in Firefox but it will work in Chrome, https://stackoverflow.com/a/24924745
                     a(href=`mailto:todd@twolfson.com?subject=${e(emailSubject)}&body=${e(emailBody)}`, target="_blank", id="contact__email-link")
                       | todd@twolfson.com
                     | &nbsp;
