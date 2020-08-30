@@ -8,33 +8,33 @@ block seo
   - let pageDescription = 'Hire a former Uber and startup software engineer as your programming mentor';
   //- DEV: Technically `title` is UX but good to consolidate here
   title= pageTitle
-  meta(name="description", content=pageDescription)
-  meta(name="robots", content="index, follow")
+  meta(name="description" content=pageDescription)
+  meta(name="robots" content="index, follow")
   //- Omitting keywords as per recommendations, feels weird
   //- SEO, Twitter: https://moz.com/blog/meta-data-templates-123
   //-   DEV: Without this, we get no link at all
   //-   https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup
-  meta(name="twitter:card", content="summary")
-  meta(name="twitter:site", content="@twolfsn")
-  meta(name="twitter:title", content=pageTitle)
-  meta(name="twitter:description", content=pageDescription)
-  meta(name="twitter:creator", content="@twolfsn")
+  meta(name="twitter:card" content="summary")
+  meta(name="twitter:site" content="@twolfsn")
+  meta(name="twitter:title" content=pageTitle)
+  meta(name="twitter:description" content=pageDescription)
+  meta(name="twitter:creator" content="@twolfsn")
   //- Twitter Summary card images must be at least 120x120px
-  meta(name="twitter:image", content=getGravatarUrl(120))
-  meta(name="twitter:image:alt", content="Photo of Todd Wolfson")
+  meta(name="twitter:image" content=getGravatarUrl(120))
+  meta(name="twitter:image:alt" content="Photo of Todd Wolfson")
   //- SEO, Facebook: https://moz.com/blog/meta-data-templates-123
   //-   DEV: Without this, only page title and URL
   //-   https://developers.facebook.com/docs/sharing/webmasters#basic
   //-   https://developers.facebook.com/docs/sharing/best-practices#images
-  meta(property="og:title", content=pageTitle)
-  meta(property="og:type", content="article")
-  meta(property="og:url", content="https://mentor.twolfson.com/")
+  meta(property="og:title" content=pageTitle)
+  meta(property="og:type" content="article")
+  meta(property="og:url" content="https://mentor.twolfson.com/")
     //- They recommend super high-res images, I'm maxing out at 600px as 1080px is ridiculous
-  meta(property="og:image", content=getGravatarUrl(600))
-  meta(property="og:description", content=pageDescription)
+  meta(property="og:image" content=getGravatarUrl(600))
+  meta(property="og:description" content=pageDescription)
   //- Not required despite Moz recommendation, there is now an `fb:app_id` but we lack that
-  //- meta(property="og:site_name", content="Site Name, i.e. Moz")
-  //- meta(property="fb:admins", content="Facebook numeric ID")
+  //- meta(property="og:site_name" content="Site Name, i.e. Moz")
+  //- meta(property="fb:admins" content="Facebook numeric ID")
 
 block content
   .row
@@ -53,7 +53,7 @@ block content
               br
               span(aria-label="5 star") 5.0 &#11088;
               = " ("
-              a(href="#reviews", id="profile__reviews-link") #{reviewCount} reviews
+              a(href="#reviews" id="profile__reviews-link") #{reviewCount} reviews
               | )
           p
             | $120 / hour
@@ -64,8 +64,8 @@ block content
             br
             | Hours: 10AM-9PM PST
           p.mb-0
-            a.btn.btn-primary.btn-block(href="#contact", id="profile__contact-link") Contact
-            a.btn.btn-secondary.btn-block(href="https://www.timeanddate.com/worldclock/converter.html?p1=224", id="profile__timezone-link") Compare timezone
+            a.btn.btn-primary.btn-block(href="#contact" id="profile__contact-link") Contact
+            a.btn.btn-secondary.btn-block(href="https://www.timeanddate.com/worldclock/converter.html?p1=224" id="profile__timezone-link") Compare timezone
     .col-12.col-lg-8.col-xl-9
       .card
         .card-body
@@ -99,21 +99,21 @@ block content
                   = " "
             p
               = "Authored over "
-              a(href="https://github.com/twolfson?tab=repositories&type=source", id="skills__github-repos-link") 130 repos/packages
+              a(href="https://github.com/twolfson?tab=repositories&type=source" id="skills__github-repos-link") 130 repos/packages
               = " with over "
-              a(href="https://twolfson.com/projects", id="skills__projects-link") 1200 stars
+              a(href="https://twolfson.com/projects" id="skills__projects-link") 1200 stars
               = " and 14 years of experience"
             p
-              a.btn.btn-sm.btn-info(href="https://github.com/twolfson", id="skills__github-link") GitHub link
+              a.btn.btn-sm.btn-info(href="https://github.com/twolfson" id="skills__github-link") GitHub link
               = " "
-              a.btn.btn-sm.btn-info(href="https://www.linkedin.com/in/toddwolfson/", id="skills__linkedin-link") LinkedIn link
+              a.btn.btn-sm.btn-info(href="https://www.linkedin.com/in/toddwolfson/" id="skills__linkedin-link") LinkedIn link
 
           .profile-section
             h3#how-do-we-get-started How do we get started?
             ul
               li
                 = "Contact me "
-                a(href="#contact", id="get-started__contact-link") via the form below
+                a(href="#contact" id="get-started__contact-link") via the form below
               //- DEV: Timing should correspond with form itself
               li I'll reply within 24 hours (usually 1-2 hours)
               li We talk and verify that I am suitable to mentor you
@@ -145,7 +145,7 @@ block content
                 .card
                   .card-body.text-center
                     = `View all ${reviewCount} reviews `
-                    a(href="https://www.codementor.io/@twolfson", id="reviews__view-all-link") here
+                    a(href="https://www.codementor.io/@twolfson" id="reviews__view-all-link") here
           .profile-section
             h3#contact Contact
             .row
@@ -178,10 +178,10 @@ block content
                 //- Note: Length validation is browser-side only it seems =/
             .row
               .col-12.col-md-7
-                form#contact-form(action="https://submit.jotform.com/submit/202376968124057/", method="post", accept-charset="utf-8", autocomplete="on")
-                  input(type="hidden", name="formID", value="202376968124057")
-                  input(type="hidden", id="JWTContainer", value="")
-                  input(type="hidden", id="cardinalOrderNumber", value="")
+                form#contact-form(action="https://submit.jotform.com/submit/202376968124057/" method="post" accept-charset="utf-8" autocomplete="on")
+                  input(type="hidden" name="formID" value="202376968124057")
+                  input(type="hidden" id="JWTContainer" value="")
+                  input(type="hidden" id="cardinalOrderNumber" value="")
                   //- Define pass-through variables for form elements
                   - let inputName;
                   .form-group
@@ -204,8 +204,8 @@ block content
                   p.mb-0
                     i.text-muted
                       = "Powered by "
-                      a(href="https://www.jotform.com/", id="contact__jotform-link") JotForm
-                  input(type="hidden", id="simple_spc", name="simple_spc" value="202376968124057")
+                      a(href="https://www.jotform.com/" id="contact__jotform-link") JotForm
+                  input(type="hidden" id="simple_spc" name="simple_spc" value="202376968124057")
                   //- DEV: If `script` is missed, then it will add a Captcha prompt on submission (nice)
                   script(type="text/javascript").
                     document.getElementById("si" + "mple" + "_spc").value = "202376968124057-202376968124057";
@@ -239,7 +239,7 @@ block content
               strong My question isn't on here
               p.mb-0
                 = "Feel free to send me an email at "
-                a(href="mailto:todd@twolfson.com?subject=Programming mentor question", target="_blank", id="questions__email-link") todd@twolfson.com
+                a(href="mailto:todd@twolfson.com?subject=Programming mentor question" target="_blank" id="questions__email-link") todd@twolfson.com
           .profile-section.mb-0
             h3#ready-to-get-started Ready to get started?
-            a.btn.btn-primary(href="#contact", id="questions__contact-link") Contact me via the form above
+            a.btn.btn-primary(href="#contact" id="questions__contact-link") Contact me via the form above
