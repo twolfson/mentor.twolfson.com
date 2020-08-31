@@ -55,6 +55,20 @@ async function main() {
     // https://github.com/parcel-bundler/parcel/blob/v1.10.3/src/Server.js#L43-L72
     let _handleRequest = server._events.request;
     server._events.request = function (req, res, next) {
+      // If someone is requesting `/index.html`, then redirect them to `/`
+      // req.url = '/main.c5ebeee7.css';
+      if (req.url.startsWith('/index.html')) {
+        if (req.url.indexOf('?') !== -1) { throw new Error('Query string not supported in redirects yet'); }
+        // DEV: 302 is temporary redirect (301 is permanent)
+        // https://stackoverflow.com/a/4062281
+        res.writeHead(302, {
+          Location: '/'
+        });
+        res.end();
+        return;
+      }
+      // If someone is requesting `/`, then serve it as `index.html`
+
       // DEV: Usually the callback/`next` is for more middleware but they seem to only use it for 404
       //   https://github.com/parcel-bundler/parcel/blob/v1.10.3/src/Server.js#L43-L111
       return _handleRequest.call(this, req, res, function custom404 () {
