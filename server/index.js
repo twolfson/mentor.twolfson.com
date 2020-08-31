@@ -67,7 +67,11 @@ async function main() {
         res.end();
         return;
       }
+
       // If someone is requesting `/`, then serve it as `index.html`
+      if (req.url === '/' || req.url === '/?') {
+        req.url = '/index.html';
+      }
 
       // DEV: Usually the callback/`next` is for more middleware but they seem to only use it for 404
       //   https://github.com/parcel-bundler/parcel/blob/v1.10.3/src/Server.js#L43-L111
