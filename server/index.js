@@ -75,7 +75,7 @@ async function main() {
 
       // DEV: Usually the callback/`next` is for more middleware but they seem to only use it for 404
       //   https://github.com/parcel-bundler/parcel/blob/v1.10.3/src/Server.js#L43-L111
-      return _handleRequest.call(this, req, res, function custom404 () {
+      return _handleRequest.call(this, req, res, function custom404() {
         req.url = '/404.html';
         _handleRequest.call(this, req, res);
       });
