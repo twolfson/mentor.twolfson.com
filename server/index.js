@@ -14,6 +14,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || ENV_DEVELOPMENT;
 const entryFiles = [
   __dirname + '/index.pug',
   __dirname + '/contact-success.pug',
+  __dirname + '/404.pug',
   __dirname + '/robots.txt',
 ];
 const options = {

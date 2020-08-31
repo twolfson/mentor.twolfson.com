@@ -1,0 +1,19 @@
+extends layout.pug
+
+block seo
+  //- Page isn't tracked so we can keep it light
+  title Page not found - 404
+  meta(name="robots" content="noindex")
+
+block content
+  .row
+    .col-12
+      .card
+        .card-body
+          h3.h4 Page not found - 404
+          p
+            | The URL you have requested couldn't be found.
+          p
+            a(href="javascript:history.back()") Return to previous page
+          p.mb-0
+            a(href="/") Return to homepage
