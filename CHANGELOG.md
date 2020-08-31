@@ -1,4 +1,8 @@
 # mentor.twolfson.com
+## 2020.0830.1806
+- Added 404 page
+- Extended development server to closer match NGINX
+
 ## 2020.0830.0023
 - Removed commas from Pug to make copy/paste with HTML much easier
 
