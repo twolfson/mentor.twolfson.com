@@ -50,6 +50,18 @@ async function main() {
     console.info(`Default page will be http://localhost:${options.port}/index.html`);
     let server = await bundler.serve(options.port, options.https); // eslint-disable-line no-unused-vars
     // Skipping browser open logic
+
+    // Override our server to behave more like NGINX
+    // https://github.com/parcel-bundler/parcel/blob/v1.10.3/src/Server.js#L43-L72
+    let _handleRequest = server._events.request;
+    server._events.request = function (req, res, next) {
+      // DEV: Usually the callback/`next` is for more middleware but they seem to only use it for 404
+      //   https://github.com/parcel-bundler/parcel/blob/v1.10.3/src/Server.js#L43-L111
+      return _handleRequest.call(this, req, res, function custom404 () {
+        req.url = '/404.html';
+        _handleRequest.call(this, req, res);
+      });
+    };
   } else if (process.env.NODE_ENV === ENV_PRODUCTION) {
     bundler.bundle();
   } else {
