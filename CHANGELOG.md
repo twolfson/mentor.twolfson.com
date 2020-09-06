@@ -1,4 +1,7 @@
 # mentor.twolfson.com
+## 2020.0905.2041
+- Added sitemap.txt
+
 ## 2020.0830.1806
 - Added 404 page
 - Extended development server to closer match NGINX
