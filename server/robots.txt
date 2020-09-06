@@ -1,2 +1,6 @@
+# Pages are disallowed via meta tags
 User-agent: *
 Allow: /
+
+# Sitemap will include all standalone landing pages, no "state" pages (e.g. success, 404)
+Sitemap: https://mentor.twolfson.com/sitemap.txt
