@@ -16,6 +16,7 @@ const entryFiles = [
   __dirname + '/contact-success.pug',
   __dirname + '/404.pug',
   __dirname + '/robots.txt',
+  __dirname + '/sitemap.txt',
 ];
 const options = {
   https: false,
