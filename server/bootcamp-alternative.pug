@@ -4,7 +4,7 @@ block seo
   //- https://www.searchenginewatch.com/2018/04/04/a-quick-and-easy-guide-to-meta-tags-in-seo/
   //- https://moz.com/blog/the-ultimate-guide-to-seo-meta-tags
   //- https://ahrefs.com/blog/seo-meta-tags/#meta-refresh-redirect
-  - let pageTitle = 'Programming mentor - Bootcamp alternative';
+  - let pageTitle = 'Bootcamp alternative - Programming mentor';
   - let pageDescription = 'Hire a former Uber and startup software engineer as your programming mentor';
   //- DEV: Technically `title` is UX but good to consolidate here
   title= pageTitle
@@ -45,16 +45,56 @@ block container
         p
           = "- Todd Wolfson, "
           a(href="/")
-            = "programming mentor, "
+            = "Programming mentor, "
             span(aria-label="5 star") 5.0 &#11088;
             = " (50 reviews)"
     .row
+      .col-12
+        p
+          = "Compare to: "
+          select.form-control
+            option General Assembly, $14,000 (10 weeks)
+
+    .row.mb-3
+      - let my_cost, my_savings;
+      - let their_weeks = 10;
+      - let their_amount = 14000;
+      - let my_rate = 120;
       .col-4
         .card: .card-body
-          p Foo
+          .text-center
+            h3 Infrequent
+            p 1 hour every 2 weeks
+            - my_cost = (their_weeks / 2) * my_rate;
+            - my_savings = ((1 - (my_cost/their_amount)) * 100).toFixed(0);
+            h3 $#{my_cost}, save #{my_savings}%
+            small 5 sessions, $120/hour
       .col-4
         .card: .card-body
-          p Bar
+          .text-center
+            h3 Regular
+            p 1 hour every week
+            - my_cost = (their_weeks / 1) * my_rate;
+            - my_savings = ((1 - (my_cost/their_amount)) * 100).toFixed(0);
+            h3 $#{my_cost}, save #{my_savings}%
+            small 10 sessions, $120/hour
       .col-4
         .card: .card-body
-          p Baz
+          .text-center
+            h3 Frequent
+            p 2 hours every week
+            - my_cost = (their_weeks * 2) * my_rate;
+            - my_savings = ((1 - (my_cost/their_amount)) * 100).toFixed(0);
+            h3 $#{my_cost}, save #{my_savings}%
+            small 10 sessions, $120/hour
+    .row
+      .col-12
+        p Or choose your own pace, I'm flexible
+        p My goal is to guarantee you're picking up material and happy with the results
+
+  //- List for later:
+  //- Additional benefits:
+  //- - Work at your own pace/hours, no rigid school schedule to follow
+  //- - Get help only as needed
+  //- - Work with an experienced industry professional
+  //- - Focus on topics you're interested in
