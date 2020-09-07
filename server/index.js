@@ -13,6 +13,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || ENV_DEVELOPMENT;
 // Set up Parcel configuration
 const entryFiles = [
   __dirname + '/index.pug',
+  __dirname + '/bootcamp-alternative.pug',
   __dirname + '/contact-success.pug',
   __dirname + '/404.pug',
   __dirname + '/robots.txt',
