@@ -48,8 +48,12 @@ exports.generateBundler = function () {
 async function main() {
   let bundler = exports.generateBundler();
   if (process.env.NODE_ENV === ENV_DEVELOPMENT) {
+    // Output our pages for developers
+    console.info(`Pages:`);
+    console.info(`- http://localhost:${options.port}/`);
+    console.info(`- http://localhost:${options.port}/bootcamp-alternative.html`);
+
     // Start our server as per normal
-    console.info(`Default page will be http://localhost:${options.port}/index.html`);
     let server = await bundler.serve(options.port, options.https); // eslint-disable-line no-unused-vars
     // Skipping browser open logic
 
