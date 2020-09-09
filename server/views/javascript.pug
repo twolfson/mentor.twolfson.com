@@ -1,7 +1,34 @@
 extends index.pug
 
+
 block seo
   - let pageTitle = 'JavaScript mentor - Todd Wolfson';
   - let pageDescription = 'Hire a former Uber and startup software engineer as your JavaScript mentor';
   - let pageRobots = 'index, follow';
   include _partials/common-seo.pug
+
+block header
+  .row.pt-3
+    .col-12
+      h1 JavaScript mentor
+      h2 Todd Wolfson
+      hr.hr--header
+
+block skills
+  - skills.push({name: "JavaScript (9 years)", badgeClass: "badge-info"});
+  - skills.push({name: "Node.js (7 years)", badgeClass: "badge-info"});
+  - skills.push({name: "Python (6 years)"});
+  - skills.push({name: "Ruby (4 years)"});
+  - skills.push({name: "HTML/CSS (14 years)"});
+  - skills.push({name: "SQL (9 years)"});
+  - skills.push({name: "Ruby on Rails (2 years)"});
+  - skills.push({name: "bash"});
+  - skills.push({name: "git"});
+  //- - skills.push({name: "Express"});
+  //- - skills.push({name: "Flask"});
+  //- - skills.push({name: "Sinatra"});
+  - skills.push({name: "OAuth2"});
+  - skills.push({name: "DevOps"});
+  //- - skills.push({name: "MVC"});
+  //- - skills.push({name: "ORM"});
+  - skills.push({name: "AWS Lambda"});

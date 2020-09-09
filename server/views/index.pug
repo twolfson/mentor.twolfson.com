@@ -46,25 +46,26 @@ block content
             h3#skills Skills
             p.mb-2
               - let skills = [];
-              - skills.push("JavaScript (9 years)");
-              - skills.push("Node.js (7 years)");
-              - skills.push("Python (6 years)");
-              - skills.push("Ruby (4 years)");
-              - skills.push("HTML/CSS (14 years)");
-              - skills.push("SQL (9 years)");
-              - skills.push("Ruby on Rails (2 years)");
-              - skills.push("bash");
-              - skills.push("git");
-              //- - skills.push("Express");
-              //- - skills.push("Flask");
-              //- - skills.push("Sinatra");
-              - skills.push("OAuth2");
-              - skills.push("DevOps");
-              //- - skills.push("MVC");
-              //- - skills.push("ORM");
-              - skills.push("AWS Lambda");
+              block skills
+                - skills.push({name: "JavaScript (9 years)"});
+                - skills.push({name: "Node.js (7 years)"});
+                - skills.push({name: "Python (6 years)"});
+                - skills.push({name: "Ruby (4 years)"});
+                - skills.push({name: "HTML/CSS (14 years)"});
+                - skills.push({name: "SQL (9 years)"});
+                - skills.push({name: "Ruby on Rails (2 years)"});
+                - skills.push({name: "bash"});
+                - skills.push({name: "git"});
+                //- - skills.push({name: "Express"});
+                //- - skills.push({name: "Flask"});
+                //- - skills.push({name: "Sinatra"});
+                - skills.push({name: "OAuth2"});
+                - skills.push({name: "DevOps"});
+                //- - skills.push({name: "MVC"});
+                //- - skills.push({name: "ORM"});
+                - skills.push({name: "AWS Lambda"});
               for skill, i in skills
-                span.badge.badge-outline-text.badge--text-normal.mb-1= skill
+                span.badge.badge--text-normal.mb-1(class=(skill.badgeClass || "badge-outline-text"))= skill.name
                 if i != (skills.length - 1)
                   = " "
             p
@@ -74,9 +75,10 @@ block content
               a(href="https://twolfson.com/projects" id="skills__projects-link") 1200 stars
               = " and 14 years of experience"
             p
-              a.btn.btn-sm.btn-info(href="https://github.com/twolfson" id="skills__github-link") GitHub link
-              = " "
-              a.btn.btn-sm.btn-info(href="https://www.linkedin.com/in/toddwolfson/" id="skills__linkedin-link") LinkedIn link
+              = "Links: "
+              a.d-inline-block(href="https://github.com/twolfson" id="skills__github-link") GitHub profile
+              = ", "
+              a.d-inline-block(href="https://www.linkedin.com/in/toddwolfson/" id="skills__linkedin-link") LinkedIn profile
 
           .profile-section
             h3#how-do-we-get-started How do we get started?
