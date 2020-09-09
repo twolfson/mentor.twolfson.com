@@ -15,6 +15,7 @@ const consolePaths = [
   '/',
   '/html-css.html',
   '/javascript.html',
+  '/nodejs.html',
   '/python.html',
   '/ruby.html',
 ];
@@ -26,6 +27,7 @@ const entryFiles = [
 
   __dirname + '/views/html-css.pug',
   __dirname + '/views/javascript.pug',
+  __dirname + '/views/nodejs.pug',
   __dirname + '/views/python.pug',
   __dirname + '/views/ruby.pug',
 
