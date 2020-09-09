@@ -60,6 +60,14 @@ html(lang="en")
           .col-12
             h1 Programming mentor
             h2 Todd Wolfson
+            p
+              - const avatarText = "Photo of Todd Wolfson";
+              img(src=getGravatarUrl(64) alt=avatarText)
+              = " "
+              span(aria-label="5 star") 5.0 &#11088;
+              = " ("
+              a(href="#reviews" id="profile__reviews-link") #{reviewCount} reviews
+              = "), $120 / hour, $10 / 5 minutes"
             hr.hr--header
       block content
         - throw new Error('Expected `content` block in `.pug` but there was none');
