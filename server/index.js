@@ -13,8 +13,10 @@ process.env.NODE_ENV = process.env.NODE_ENV || ENV_DEVELOPMENT;
 // Set up Parcel configuration
 const consolePaths = [
   '/',
+  '/html-css.html',
   '/javascript.html',
   '/python.html',
+  '/ruby.html',
 ];
 const entryFiles = [
   // DEV: When adding a new page, consider updating `sitemap.txt`
@@ -22,8 +24,10 @@ const entryFiles = [
   __dirname + '/views/contact-success.pug',
   __dirname + '/views/404.pug',
 
+  __dirname + '/views/html-css.pug',
   __dirname + '/views/javascript.pug',
   __dirname + '/views/python.pug',
+  __dirname + '/views/ruby.pug',
 
   __dirname + '/views/robots.txt',
   __dirname + '/views/sitemap.txt',

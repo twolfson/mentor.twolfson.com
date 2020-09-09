@@ -1,0 +1,39 @@
+extends index.pug
+
+
+block seo
+  - let pageTitle = 'Ruby mentor - Todd Wolfson';
+  - let pageDescription = 'Hire a former Uber and startup software engineer as your Ruby mentor';
+  - let pageRobots = 'index, follow';
+  include _partials/common-seo.pug
+
+block header
+  .row.pt-3
+    .col-12
+      h1 Ruby mentor
+      h2 Todd Wolfson
+      hr.hr--header
+
+block hero-pitch
+  h3.h4 Work with a former Uber and startup software engineer as your mentor
+  h4.h5 Learn all about Ruby and Ruby on Rails from an experienced programmer
+
+block skills
+  - skills.push({name: "Ruby (4 years)", badgeClass: "badge-info"});
+  - skills.push({name: "Ruby on Rails (2 years)", badgeClass: "badge-info"});
+  - skills.push({name: "Sinatra", badgeClass: "badge-info"});
+  - skills.push({name: "JavaScript (9 years)"});
+  - skills.push({name: "HTML/CSS (14 years)"});
+  - skills.push({name: "SQL (9 years)"});
+  - skills.push({name: "Node.js (7 years)"});
+  - skills.push({name: "Python (6 years)"});
+  - skills.push({name: "bash"});
+  - skills.push({name: "git"});
+  //- - skills.push({name: "Express"});
+  //- - skills.push({name: "Flask"});
+  - skills.push({name: "OAuth2"});
+  - skills.push({name: "DevOps"});
+  //- - skills.push({name: "MVC"});
+  //- - skills.push({name: "ORM"});
+  //- - skills.push({name: "AWS Lambda"});
+  - skills.push({name: "Heroku"});
