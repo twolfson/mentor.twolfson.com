@@ -12,11 +12,11 @@ process.env.NODE_ENV = process.env.NODE_ENV || ENV_DEVELOPMENT;
 
 // Set up Parcel configuration
 const entryFiles = [
-  __dirname + '/index.pug',
-  __dirname + '/contact-success.pug',
-  __dirname + '/404.pug',
-  __dirname + '/robots.txt',
-  __dirname + '/sitemap.txt',
+  __dirname + '/views/index.pug',
+  __dirname + '/views/contact-success.pug',
+  __dirname + '/views/404.pug',
+  __dirname + '/views/robots.txt',
+  __dirname + '/views/sitemap.txt',
 ];
 const options = {
   https: false,
