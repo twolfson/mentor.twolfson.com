@@ -11,12 +11,19 @@ const ENV_PRODUCTION = 'production';
 process.env.NODE_ENV = process.env.NODE_ENV || ENV_DEVELOPMENT;
 
 // Set up Parcel configuration
+const consolePaths = [
+  '/',
+  '/javascript.html',
+  '/python.html',
+];
 const entryFiles = [
   // DEV: When adding a new page, consider updating `sitemap.txt`
   __dirname + '/views/index.pug',
   __dirname + '/views/contact-success.pug',
   __dirname + '/views/404.pug',
+
   __dirname + '/views/javascript.pug',
+  __dirname + '/views/python.pug',
 
   __dirname + '/views/robots.txt',
   __dirname + '/views/sitemap.txt',
@@ -52,8 +59,9 @@ async function main() {
   if (process.env.NODE_ENV === ENV_DEVELOPMENT) {
     // Output our pages for developers
     console.info(`Pages:`);
-    console.info(`- http://localhost:${options.port}/`);
-    console.info(`- http://localhost:${options.port}/javascript.html`);
+    consolePaths.forEach((consolePath) => {
+      console.info(`- http://localhost:${options.port}${consolePath}`);
+    });
 
     // Start our server as per normal
     let server = await bundler.serve(options.port, options.https); // eslint-disable-line no-unused-vars
