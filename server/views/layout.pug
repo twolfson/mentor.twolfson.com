@@ -7,12 +7,6 @@
 - const e = encodeURIComponent;
 - const getGravatarUrl = (imgSize) => `https://s.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d?s=${e(imgSize)}`;
 
-- let pageConfig = {
--   showLeftCard: false
-- };
-block pageConfig
-  //- Do nothing by default
-
 //- Start our page
 //- DEV: `id=` calls will often be for analytics mostly
 doctype html
@@ -61,22 +55,24 @@ html(lang="en")
 
     //- Start on page content
     .container
-      .row.pt-3
-        .col-12
-          h1 Programming mentor
-          h2 Todd Wolfson
-          hr.hr--header
+      block header
+        .row.pt-3
+          .col-12
+            h1 Programming mentor
+            h2 Todd Wolfson
+            hr.hr--header
       block content
         - throw new Error('Expected `content` block in `.pug` but there was none');
-      .row
-        .col-12.text-center
-          hr.hr--footer
-          p.text-muted
-            = "Site built on "
-            a(href="https://parceljs.org/" id="footer__parcel-link") Parcel
-            = ". "
-            = "View repo on "
-            a(href="https://github.com/twolfson/mentor.twolfson.com" id="footer__github-link") GitHub
+      block footer
+        .row
+          .col-12.text-center
+            hr.hr--footer
+            p.text-muted
+              = "Site built on "
+              a(href="https://parceljs.org/" id="footer__parcel-link") Parcel
+              = ". "
+              = "View repo on "
+              a(href="https://github.com/twolfson/mentor.twolfson.com" id="footer__github-link") GitHub
     //- Optional JS for Bootstrap, omitted for now
     //- script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
     //- script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous")
