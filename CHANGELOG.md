@@ -1,4 +1,7 @@
 # mentor.twolfson.com
+## 2020.0908.1724
+- Relocated server/views for easier partials and extension with less per-page noise in the future
+
 ## 2020.0905.2041
 - Added sitemap.txt
 
