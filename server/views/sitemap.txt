@@ -1,5 +1,4 @@
 https://mentor.twolfson.com/
-https://mentor.twolfson.com/bootcamp-alternative.html
 https://mentor.twolfson.com/html-css.html
 https://mentor.twolfson.com/javascript.html
 https://mentor.twolfson.com/nodejs.html
