@@ -1,10 +1,17 @@
 // Define common variables
+// https://github.com/twbs/bootstrap/blob/v4.5.2/dist/css/bootstrap.css#L21
+$bs-primary-color: #007bff;
 $bs-secondary-color: #6c757d;
 $bs-text-color: #212529;
 $xxs-breakpoint: 479px; // Based on: https://github.com/auipga/bootstrap-xxs
 
 // Define our rules
 // SECTION: Bootstrap-like rules
+.badge-outline-primary {
+  // Based on `btn-outline-secondary`
+  border: 1px solid $bs-primary-color;
+  color: $bs-primary-color;
+}
 .badge-outline-text {
   // Based on `btn-outline-secondary`
   border: 1px solid $bs-text-color;

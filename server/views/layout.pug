@@ -7,12 +7,6 @@
 - const e = encodeURIComponent;
 - const getGravatarUrl = (imgSize) => `https://s.gravatar.com/avatar/15927fc52919e9223adc7ed99e125d4d?s=${e(imgSize)}`;
 
-- let pageConfig = {
--   showLeftCard: false
-- };
-block pageConfig
-  //- Do nothing by default
-
 //- Start our page
 //- DEV: `id=` calls will often be for analytics mostly
 doctype html
@@ -35,9 +29,9 @@ html(lang="en")
     //- Attribution: Book by beth bolton from the Noun Project
     //-   https://thenounproject.com/search/?q=book&i=1557574
     //-   Stored in `resources` folder
-    link(rel="icon" type="image/png" sizes="32x32" href="../browser/images/favicon-32x32.png")
-    link(rel="icon" type="image/png" sizes="16x16" href="../browser/images/favicon-16x16.png")
-    link(rel="shortcut icon" href="../browser/images/favicon.ico")
+    link(rel="icon" type="image/png" sizes="32x32" href="../../browser/images/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="../../browser/images/favicon-16x16.png")
+    link(rel="shortcut icon" href="../../browser/images/favicon.ico")
 
     //- Bootstrap CSS
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
@@ -46,13 +40,13 @@ html(lang="en")
       - throw new Error('Expected `seo` block in `.pug` but there was none (e.g. title, meta tags)');
 
     //- Custom CSS
-    link(rel="stylesheet" href="../browser/css/main.scss")
+    link(rel="stylesheet" href="../../browser/css/main.scss")
 
     //- No Sentry for site as there's nothing to break...
 
     //- If we're in development, then provide placeholder JS for HMR to hook into
     if process.env.NODE_ENV === 'development'
-      script(src="../browser/js/index.js")
+      script(src="../../browser/js/index.js")
   body
     //- Google Tag Manager: "Paste this code immediately after the opening <body> tag"
     //- Omitting `noscript`, respect no analytics for those who don't want it
@@ -60,15 +54,16 @@ html(lang="en")
       //- noscript: iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-M4ZRN6Z" height="0" width="0" style="display:none;visibility:hidden")
 
     //- Start on page content
-    block container
-      .container
+    .container
+      block header
         .row.pt-3
           .col-12
             h1 Programming mentor
             h2 Todd Wolfson
             hr.hr--header
-        block content
-          - throw new Error('Expected `content` block in `.pug` but there was none');
+      block content
+        - throw new Error('Expected `content` block in `.pug` but there was none');
+      block footer
         .row
           .col-12.text-center
             hr.hr--footer

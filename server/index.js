@@ -11,13 +11,29 @@ const ENV_PRODUCTION = 'production';
 process.env.NODE_ENV = process.env.NODE_ENV || ENV_DEVELOPMENT;
 
 // Set up Parcel configuration
+const consolePaths = [
+  '/',
+  '/html-css.html',
+  '/javascript.html',
+  '/nodejs.html',
+  '/python.html',
+  '/ruby.html',
+];
 const entryFiles = [
-  __dirname + '/index.pug',
-  __dirname + '/bootcamp-alternative.pug',
-  __dirname + '/contact-success.pug',
-  __dirname + '/404.pug',
-  __dirname + '/robots.txt',
-  __dirname + '/sitemap.txt',
+  // DEV: When adding a new page, consider updating `sitemap.txt`
+  __dirname + '/views/index.pug',
+  __dirname + '/views/contact-success.pug',
+  __dirname + '/views/404.pug',
+
+  __dirname + '/views/bootcamp-alternative.pug',
+  __dirname + '/views/html-css.pug',
+  __dirname + '/views/javascript.pug',
+  __dirname + '/views/nodejs.pug',
+  __dirname + '/views/python.pug',
+  __dirname + '/views/ruby.pug',
+
+  __dirname + '/views/robots.txt',
+  __dirname + '/views/sitemap.txt',
 ];
 const options = {
   https: false,
@@ -50,8 +66,9 @@ async function main() {
   if (process.env.NODE_ENV === ENV_DEVELOPMENT) {
     // Output our pages for developers
     console.info(`Pages:`);
-    console.info(`- http://localhost:${options.port}/`);
-    console.info(`- http://localhost:${options.port}/bootcamp-alternative.html`);
+    consolePaths.forEach((consolePath) => {
+      console.info(`- http://localhost:${options.port}${consolePath}`);
+    });
 
     // Start our server as per normal
     let server = await bundler.serve(options.port, options.https); // eslint-disable-line no-unused-vars

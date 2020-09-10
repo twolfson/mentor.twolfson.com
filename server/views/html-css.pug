@@ -1,0 +1,40 @@
+extends index.pug
+
+block seo
+  - let pageTitle = 'HTML and CSS mentor - Todd Wolfson';
+  - let pageDescription = 'Hire a former Uber and startup software engineer as your HTML/CSS mentor';
+  - let pageRobots = 'index, follow';
+  include _partials/common-seo.pug
+
+block header
+  .row.pt-3
+    .col-12
+      h1 HTML and CSS mentor
+      h2 Todd Wolfson
+      hr.hr--header
+
+block hero-pitch
+  h3.h4 Work with a former Uber and startup software engineer as your mentor
+  h4.h5 Learn all about HTML/CSS, from different layout modes to OOCSS to responsive design
+
+block skills
+  - skills.push({name: "HTML/CSS (14 years)", badgeClass: "badge-info"});
+  - skills.push({name: "JavaScript (9 years)", badgeClass: "badge-info"});
+  - skills.push({name: "CodePen", badgeClass: "badge-info"});
+  - skills.push({name: "S3", badgeClass: "badge-info"});
+  - skills.push({name: "GitHub Pages", badgeClass: "badge-info"});
+  - skills.push({name: "Node.js (7 years)"});
+  - skills.push({name: "Python (6 years)"});
+  - skills.push({name: "Ruby (4 years)"});
+  - skills.push({name: "SQL (9 years)"});
+  //- - skills.push({name: "Ruby on Rails (2 years)"});
+  - skills.push({name: "bash"});
+  - skills.push({name: "git"});
+  //- - skills.push({name: "Express"});
+  //- - skills.push({name: "Flask"});
+  //- - skills.push({name: "Sinatra"});
+  //- - skills.push({name: "OAuth2"});
+  //- - skills.push({name: "DevOps"});
+  //- - skills.push({name: "MVC"});
+  //- - skills.push({name: "ORM"});
+  //- - skills.push({name: "AWS Lambda"});
