@@ -4,6 +4,8 @@ if ! pageDescription
   - throw new Error('Missing `pageDescription` variable for `common-seo.pug`');
 if ! pageRobots
   - throw new Error('Missing `pageRobots` variable for `common-seo.pug`');
+if ! pageUrl
+  - throw new Error('Missing `pageUrl` variable for `common-seo.pug`');
 
 //- https://www.searchenginewatch.com/2018/04/04/a-quick-and-easy-guide-to-meta-tags-in-seo/
 //- https://moz.com/blog/the-ultimate-guide-to-seo-meta-tags
@@ -29,8 +31,8 @@ meta(name="twitter:image:alt" content="Photo of Todd Wolfson")
 //-   https://developers.facebook.com/docs/sharing/webmasters#basic
 //-   https://developers.facebook.com/docs/sharing/best-practices#images
 meta(property="og:title" content=pageTitle)
-meta(property="og:type" content="article")
-meta(property="og:url" content="https://mentor.twolfson.com/")
+meta(property="og:type" content="website")
+meta(property="og:url" content=pageUrl)
   //- They recommend super high-res images, I'm maxing out at 600px as 1080px is ridiculous
 meta(property="og:image" content=getGravatarUrl(600))
 meta(property="og:description" content=pageDescription)
