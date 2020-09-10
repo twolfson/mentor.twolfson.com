@@ -34,10 +34,22 @@ block content
         //- TODO: Make select interactive for a few items
         //- TODO: If we add our own JS, then this means Sentry.js
         //- TODO: Verify numbers are accurate, also maybe link to them somehow. Maybe in footer?
-        = "Compare to: "
+        = "Compare bootcamp to mentor: "
         select.form-control
-          option General Assembly, $14,000 (10 weeks)
-
+          //- https://generalassemb.ly/education/software-engineering-immersive/san-francisco
+          //-   Sep 21 -> Dec 18 (2020), counting from Mondays
+          //-   Sep = 2, Oct = 4, Nov = 5, Dec = 2, 5 days excluded so -1
+          //-   Total: 12 (2+4+5+2-1)
+          option General Assembly, $14,950 (12 weeks) vs $120/hour mentor
+          //- https://flatironschool.com/career-courses/coding-bootcamp#tuition
+          //-   Sep 14 -> Dec 25 (2020), counting from Mondays
+          //-   Sep = 3, Oct = 4, Nov = 5, Dec = 3, no days excluded mentioned
+          //-   Total: 15
+          option Flatiron School, $17,000 (15 weeks) vs $120/hour mentor
+          //- https://www.hackreactor.com/online-coding-bootcamp#Tuition%20&%20Financial
+          //-   Oct 5 -> Jan 15 (2020), counting from Mondays
+          //-   Oct = 4, Nov = 5, Dec = 4, Jan = 2, no days excluded mentioned
+          option Hack Reactor, $17,980 (15 weeks) vs $120/hour mentor
   .row.mb-3
     - let my_cost, my_savings, my_sessions;
     - let their_weeks = 10;
