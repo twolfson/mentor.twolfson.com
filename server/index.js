@@ -13,6 +13,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || ENV_DEVELOPMENT;
 // Set up Parcel configuration
 const consolePaths = [
   '/',
+  '/bootcamp-alternative.html',
   '/html-css.html',
   '/javascript.html',
   '/nodejs.html',
