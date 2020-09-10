@@ -56,7 +56,7 @@ block content
         //- TODO: If we add our own JS, then this means Sentry.js
         //- TODO: Verify numbers are accurate, also maybe link to them somehow. Maybe in footer?
         = "Compare bootcamp to mentor: "
-        select.form-control
+        select#compare-bootcamp-select.form-control
           //- https://generalassemb.ly/education/software-engineering-immersive/san-francisco
           //-   Sep 21 -> Dec 18 (2020), counting from Mondays
           //-   Sep = 2, Oct = 4, Nov = 5, Dec = 2, 5 days excluded so -1
@@ -92,25 +92,88 @@ block content
         .text-center
           h3 Infrequent
           p 1 hour every 2 weeks
-          .h3 $#{defaultCompareInfo.infrequent.cost}, save #{defaultCompareInfo.infrequent.savings}%
-          p: small #{defaultCompareInfo.infrequent.sessions} sessions, $120/hour
+          .h3
+            | $
+            span#infrequent-cost #{defaultCompareInfo.infrequent.cost}
+            = ", save "
+            span#infrequent-savings #{defaultCompareInfo.infrequent.savings}
+            | %
+          p: small
+            span#infrequent-sessions #{defaultCompareInfo.infrequent.sessions}
+            = " sessions, $120/hour"
           a(href="TODO: Link me, including selection").btn.btn-secondary.btn-block Contact Todd
     .col-4
       .card: .card-body
         .text-center
           h3 Regular
           p 1 hour every week
-          .h3 $#{defaultCompareInfo.regular.cost}, save #{defaultCompareInfo.regular.savings}%
-          p: small #{defaultCompareInfo.regular.sessions} sessions, $120/hour
+          .h3
+            | $
+            span#regular-cost #{defaultCompareInfo.regular.cost}
+            = ", save "
+            span#regular-savings #{defaultCompareInfo.regular.savings}
+            | %
+          p: small
+            span#regular-sessions #{defaultCompareInfo.regular.sessions}
+            = " sessions, $120/hour"
           a(href="TODO: Link me, including selection").btn.btn-primary.btn-block Contact Todd
     .col-4
       .card: .card-body
         .text-center
           h3 Frequent
           p 2 hours every week
-          .h3 $#{defaultCompareInfo.frequent.cost}, save #{defaultCompareInfo.frequent.savings}%
-          p: small #{defaultCompareInfo.frequent.sessions} sessions, $120/hour
+          .h3
+            | $
+            span#frequent-cost #{defaultCompareInfo.frequent.cost}
+            = ", save "
+            span#frequent-savings #{defaultCompareInfo.frequent.savings}
+            | %
+          p: small
+            span#frequent-sessions #{defaultCompareInfo.frequent.sessions}
+            = " sessions, $120/hour"
           a(href="TODO: Link me, including selection").btn.btn-secondary.btn-block Contact Todd
+    //- Inlining page-specific JS, we could make it standalone but meh
+    //- TODO: Add Sentry for our page due to having JS
+    script.
+      // When the page loads
+      // http://youmightnotneedjquery.com/#ready
+      // http://youmightnotneedjquery.com/#on
+      document.addEventListener('DOMContentLoaded', function handleReady () {
+        // Define our compare change handler
+        var lastSelection = 0;
+        var selectEl = document.getElementById('compare-bootcamp-select');
+        if (!selectEl) { throw new Error('Unable to find #compare-bootcamp-select'); }
+        function handleCompareChange(evtOrNull) {
+          // Resolve our current selection
+          var currentSelection = selectEl.selectedIndex;
+
+          // If our selection is unchanged, then do nothing
+          if (lastSelection === currentSelection) {
+            return;
+          }
+
+          // Otherwise, handle our change
+          lastSelection = currentSelection;
+          var compareInfoJSON = selectEl.options[currentSelection].getAttribute('data-compare-info');
+          // DEV: We have to encode with quotes to avoid escaping to `&quot;` which is valid
+          var compareInfo = JSON.parse(compareInfoJSON.replace(/'/g, '"'));
+          document.getElementById('infrequent-cost').textContent = compareInfo.infrequent.cost;
+          document.getElementById('infrequent-savings').textContent = compareInfo.infrequent.savings;
+          document.getElementById('infrequent-sessions').textContent = compareInfo.infrequent.sessions;
+          document.getElementById('regular-cost').textContent = compareInfo.regular.cost;
+          document.getElementById('regular-savings').textContent = compareInfo.regular.savings;
+          document.getElementById('regular-sessions').textContent = compareInfo.regular.sessions;
+          document.getElementById('frequent-cost').textContent = compareInfo.frequent.cost;
+          document.getElementById('frequent-savings').textContent = compareInfo.frequent.savings;
+          document.getElementById('frequent-sessions').textContent = compareInfo.frequent.sessions;
+        }
+
+        // Run our compare change handler (in case the selection is off)
+        handleCompareChange(null);
+
+        // When our select option changes, run our compare change event
+        selectEl.addEventListener('change', handleCompareChange);
+      });
   .row.mb-4
     .col-12
       p Or choose your own pace, I'm flexible
