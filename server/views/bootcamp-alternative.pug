@@ -1,7 +1,7 @@
 extends layout.pug
 
 block seo
-  - let pageTitle = 'Bootcamp alternative - Programming mentor';
+  - let pageTitle = 'Coding bootcamp alternative - Programming mentor';
   - let pageDescription = 'Hire a former Uber and startup software engineer as your programming mentor';
   - let pageRobots = 'index, follow';
   - let pageUrl = 'https://mentor.twolfson.com/bootcamp-alternative.html';
@@ -16,13 +16,15 @@ block footer
 block content
   .row
     .col-12
-      h1 Bootcamps can be expensive
+      h1 Coding bootcamps can be expensive
       h2 Hire a mentor and save money instead
       p
         //- TODO: Should we add a tiny image here? Like after "Wolfson" or before "Todd"?
         //- TODO: Make reviews link in page
         //- TODO: Maybe don't link to other page here, it'll be confusing
-        = "- Todd Wolfson, "
+        = "- Todd Wolfson "
+        img.rounded(src=getGravatarUrl(24) alt="Photo of Todd Wolfson")
+        = ", "
         a(href="/")
           = "Programming mentor, "
           span(aria-label="5 star") 5.0 &#11088;
@@ -88,7 +90,7 @@ block content
           .h3 $#{my_cost}, save #{my_savings}%
           p: small #{my_sessions} sessions, $120/hour
           a(href="TODO: Link me, including selection").btn.btn-secondary.btn-block Contact Todd
-  .row
+  .row.mb-4
     .col-12
       p Or choose your own pace, I'm flexible
       p My goal is to guarantee you're picking up material and happy with the results
