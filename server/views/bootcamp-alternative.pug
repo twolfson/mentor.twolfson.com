@@ -31,6 +31,25 @@ block content
           = " (50 reviews)"
         //- TODO: Add more professional experience
   .row
+    -
+      const calcCampInfo = (params) => {
+        if (!params.weeks) { throw new Error('Missing `params.weeks`'); }
+        if (!params.their_cost) { throw new Error('Missing `params.their_cost`'); }
+        const rate = 120; // per hour
+        const calcSessionsInfo = (sessions) => {
+          let my_cost = rate * sessions;
+          return {
+            sessions: sessions,
+            cost: my_cost,
+            savings: ((1 - (my_cost/params.their_cost)) * 100).toFixed(0),
+          };
+        };
+        return {
+          infrequent: calcSessionsInfo(params.weeks / 2),
+          regular:    calcSessionsInfo(params.weeks),
+          frequent:   calcSessionsInfo(params.weeks * 2),
+        };
+      };
     .col-12
       p
         //- TODO: Make select interactive for a few items
@@ -42,16 +61,23 @@ block content
           //-   Sep 21 -> Dec 18 (2020), counting from Mondays
           //-   Sep = 2, Oct = 4, Nov = 5, Dec = 2, 5 days excluded so -1
           //-   Total: 12 (2+4+5+2-1)
-          option General Assembly, $14,950 (12 weeks) vs $120/hour mentor
+          option(data-cost-1="general-assembly")
+            | General Assembly, $14,950 (12 weeks) vs $120/hour mentor
           //- https://flatironschool.com/career-courses/coding-bootcamp#tuition
           //-   Sep 14 -> Dec 25 (2020), counting from Mondays
           //-   Sep = 3, Oct = 4, Nov = 5, Dec = 3, no days excluded mentioned
-          //-   Total: 15
-          option Flatiron School, $17,000 (15 weeks) vs $120/hour mentor
-          //- https://www.hackreactor.com/online-coding-bootcamp#Tuition%20&%20Financial
-          //-   Oct 5 -> Jan 15 (2020), counting from Mondays
-          //-   Oct = 4, Nov = 5, Dec = 4, Jan = 2, no days excluded mentioned
-          option Hack Reactor, $17,980 (15 weeks) vs $120/hour mentor
+          //-   Total: 15 (3+4+5+3)
+          option(data-key="fs") Flatiron School, $17,000 (15 weeks) vs $120/hour mentor
+          //- //- https://www.hackreactor.com/online-coding-bootcamp#Tuition%20&%20Financial
+          //- //-   Oct 5 -> Jan 15 (2020), counting from Mondays
+          //- //-   Oct = 4, Nov = 5, Dec = 4, Jan = 2, no days excluded mentioned
+          //- //-   Total: 15 (4+5+4+2)
+          //- option Hack Reactor, $17,980 (15 weeks) vs $120/hour mentor
+          //- https://generalassemb.ly/education/python-programming/san-francisco
+          //-   Sep 26 -> Oct 31 (2020), counting from Saturdays
+          //-   Sep = 1, Oct = 5
+          //-   Total: 6 (1+5)
+          option General Assembly part-time, $3,950 (6 weeks, once per week) vs $120/hour mentor
   .row.mb-3
     - let my_cost, my_savings, my_sessions;
     - let their_weeks = 10;
@@ -62,9 +88,6 @@ block content
         .text-center
           h3 Infrequent
           p 1 hour every 2 weeks
-          - my_sessions = their_weeks / 2;
-          - my_cost = my_sessions * my_rate;
-          - my_savings = ((1 - (my_cost/their_amount)) * 100).toFixed(0);
           .h3 $#{my_cost}, save #{my_savings}%
           p: small #{my_sessions} sessions, $120/hour
           a(href="TODO: Link me, including selection").btn.btn-secondary.btn-block Contact Todd
@@ -136,3 +159,13 @@ block content
   //- - Get help only as needed
   //- - Work with an experienced industry professional
   //- - Focus on topics you're interested in
+
+  //- Have call-outs for sites we support mentoring with:
+  //- - FreeCodeCamp
+  //- - Learn Python
+  //- - Codecademy
+  //- - Udemy
+  //- - Etc
+
+  //- Have wording like "Stop any time"
+  //- "Avoid frustrating hidden fees" (link to income share complaints)
