@@ -1,4 +1,8 @@
 # mentor.twolfson.com
+## 2020.0909.1801
+- Updated Open Graph to have correct type/url for pages
+- Added canonical URL as future-proofing
+
 ## 2020.0908.2129
 - Added per-language landing pages for more specific SEO/ads
 
