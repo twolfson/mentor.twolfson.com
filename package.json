@@ -12,7 +12,7 @@
     "foundry-release-git": "~2.0.3",
     "foundry-release-npm": "~2.0.2",
     "mocha": "~8.1.2",
-    "parcel": "~1.12.4",
+    "parcel": "1.12.3",
     "pug": "~3.0.0",
     "sass": "~1.26.10"
   },
