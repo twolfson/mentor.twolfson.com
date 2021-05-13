@@ -1,4 +1,8 @@
 # mentor.twolfson.com
+## 2021.0513.0040
+- Pinned parcel to version without "Invalid Version: undefined" error
+- Updated available hours
+
 ## 2020.0909.1801
 - Updated Open Graph to have correct type/url for pages
 - Added canonical URL as future-proofing
