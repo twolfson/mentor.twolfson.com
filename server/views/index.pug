@@ -33,7 +33,11 @@ block content
           p
             | Location: San Francisco, CA
             br
-            | Hours: 10AM-9PM PST
+            = "Hours: "
+            | Mon-Fri: 6PM-10PM PDT
+            br
+            span.invisible= "Hours: "
+            | Sat-Sun: 10AM-10PM PDT
           p.mb-0
             a.btn.btn-primary.btn-block(href="#contact" id="profile__contact-link") Contact
             a.btn.btn-secondary.btn-block(href="https://www.timeanddate.com/worldclock/converter.html?p1=224" id="profile__timezone-link") Compare timezone
